@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NEC Study</title>
+<meta name="description" content="Offline NEC 2026 study app for Texas apprentices working toward the journeyman license.">
+<meta name="theme-color" content="#0f1216">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="NEC Study">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+:root{
+  --bg:#0f1216; --card:#181d23; --card2:#212830; --line:#2c343e; --text:#e8ecf0; --dim:#9aa5b1;
+  --accent:#ffb020; --accent-ink:#1a1200; --good:#3ecf8e; --bad:#ff6b6b; --link:#7cc4ff;
+  --r:14px; --tap:56px;
+  color-scheme: dark;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--text)}
+body{font:17px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  padding:env(safe-area-inset-top) 0 calc(76px + env(safe-area-inset-bottom));-webkit-text-size-adjust:100%}
+main{max-width:720px;margin:0 auto;padding:12px 16px 24px}
+h1{font-size:26px;margin:8px 0 4px;line-height:1.2}
+h2{font-size:21px;margin:22px 0 8px}
+h3{font-size:18px;margin:18px 0 6px;color:var(--accent)}
+p{margin:8px 0}
+a{color:var(--link)}
+.dim{color:var(--dim)} .small{font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin:10px 0}
+.row{display:flex;gap:10px;align-items:center}
+.grow{flex:1;min-width:0}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:var(--tap);
+  padding:12px 16px;margin:8px 0;border-radius:var(--r);border:1px solid var(--line);background:var(--card2);
+  color:var(--text);font:600 18px/1.25 inherit;text-align:center;text-decoration:none;cursor:pointer}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.small{min-height:44px;font-size:16px;width:auto;padding:8px 14px;margin:4px 0}
+.btn:active{transform:scale(.98)}
+.list a.item{display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 14px;margin:8px 0;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);color:var(--text);text-decoration:none}
+.item .ico{font-size:26px;width:36px;text-align:center}
+.item .t{font-weight:650}
+.item .s{color:var(--dim);font-size:14px}
+.check{color:var(--good);font-weight:700}
+.bar{height:8px;background:var(--card2);border-radius:8px;overflow:hidden;margin-top:6px}
+.bar>i{display:block;height:100%;background:var(--accent)}
+nav.tabs{position:fixed;left:0;right:0;bottom:0;display:flex;background:#0b0e11ee;border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:10}
+nav.tabs a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:64px;
+  color:var(--dim);text-decoration:none;font-size:12px;font-weight:600}
+nav.tabs a span{font-size:24px;line-height:1.1}
+nav.tabs a.on{color:var(--accent)}
+.lesson table{border-collapse:collapse;width:100%;font-size:15px;margin:10px 0}
+.lesson th,.lesson td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+.lesson th{background:var(--card2)}
+.tablewrap{overflow-x:auto}
+.lesson ul,.lesson ol{padding-left:22px} .lesson li{margin:4px 0}
+.tip,.job,.test,.warn{border-radius:12px;padding:10px 14px;margin:12px 0;border-left:5px solid}
+.job{background:#16251d;border-color:var(--good)}
+.test{background:#1b2030;border-color:var(--link)}
+.tip{background:#2a2312;border-color:var(--accent)}
+.warn{background:#2c1617;border-color:var(--bad)}
+.tip b:first-child,.job b:first-child,.test b:first-child,.warn b:first-child{display:block}
+button.ref{display:inline-block;font:700 15px/1 ui-monospace,Menlo,Consolas,monospace;color:var(--accent);
+  background:#2a2312;border:1px solid #5a4719;border-radius:8px;padding:5px 7px;margin:1px 0;cursor:pointer;vertical-align:baseline}
+.fig{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:12px 0}
+.fig figure{margin:0;background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:8px;text-align:center}
+.fig svg{width:100%;height:96px;color:var(--text)}
+.fig figcaption{font-size:14px;font-weight:650}
+.fig figcaption small{display:block;font-weight:400;color:var(--dim)}
+.q{font-size:19px;font-weight:600;margin:6px 0 12px}
+.choice{text-align:left;justify-content:flex-start;font-weight:500}
+.choice.right{background:#123524;border-color:var(--good)}
+.choice.wrong{background:#3a1617;border-color:var(--bad)}
+.why{background:var(--card2);border-radius:12px;padding:10px 14px;margin:10px 0}
+.flash{min-height:220px;display:flex;flex-direction:column;justify-content:center}
+input,select{width:100%;min-height:52px;font:18px inherit;color:var(--text);background:var(--card2);
+  border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:4px 0 10px}
+label{font-weight:600;font-size:15px;color:var(--dim)}
+.out{font:700 22px/1.3 ui-monospace,Menlo,Consolas,monospace;color:var(--accent)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pager{position:sticky;top:0;z-index:5;background:var(--bg);display:flex;gap:6px;padding:6px 0;align-items:center}
+.pager .btn{margin:0}
+.pagewrap{overflow-x:auto;background:#fff;border-radius:6px}
+.pagewrap img{display:block;width:100%}
+.hit{display:block;padding:10px 12px;margin:6px 0;background:var(--card);border:1px solid var(--line);border-radius:12px;color:var(--text);text-decoration:none}
+.hit mark{background:var(--accent);color:#000;border-radius:3px}
+.timer{font:700 18px ui-monospace,Menlo,monospace}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--card);border-top:1px solid var(--line);
+  border-radius:18px 18px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom));max-width:720px;margin:0 auto;box-shadow:0 -10px 30px #000a}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<nav class="tabs">
+  <a href="#/" data-tab="home"><span>🏠</span>Home</a>
+  <a href="#/learn" data-tab="learn"><span>📘</span>Learn</a>
+  <a href="#/practice" data-tab="practice"><span>🎯</span>Practice</a>
+  <a href="#/book" data-tab="book"><span>📖</span>Code Book</a>
+  <a href="#/tools" data-tab="tools"><span>🧰</span>Tools</a>
+</nav>
+<script src="content/start.js"></script>
+<script src="content/names.js"></script>
+<script src="content/support.js"></script>
+<script src="content/bending.js"></script>
+<script src="content/safety.js"></script>
+<script src="content/ch3.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
