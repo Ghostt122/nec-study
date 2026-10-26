@@ -99,6 +99,7 @@ function normRef(r) {
 function findKey(r) {
   if (!book) return null;
   let k = normRef(r);
+  if (!book.idx[k] && /^Table \d/.test(k)) k = k.slice(6); // table title not indexed -> its section
   for (;;) {
     if (book.idx[k]) return k;
     const s = k.replace(/\([^()]*\)$/, '');
