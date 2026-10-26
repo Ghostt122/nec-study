@@ -181,7 +181,7 @@ views.learn = () => {
       <a class="item" href="#/m/${m.id}"><div class="ico">${m.icon}</div><div class="grow">
       <div class="t">${esc(m.title)}</div><div class="s">${esc(m.blurb)}</div>
       <div class="bar"><i style="width:${s.pct}%"></i></div></div></a>`; }).join('')}</div>
-    <p class="dim small">More of the code (services, grounding, motors, calcs…) is added in later updates.</p>`;
+    <p class="dim small">Every lesson's section numbers open the exact page in your imported code book.</p>`;
 };
 
 views.m = ([mid]) => {
@@ -217,6 +217,8 @@ views.practice = () => {
     <a class="btn" href="#/quiz/missed">Redo ones I've missed</a>
     <h2>Timed test</h2>
     <p class="dim small">The real Texas journeyman exam: 80 scored questions, 4 hours, 70% to pass, open book (your own soft-bound NEC). That's about 3 minutes a question.</p>
+    <a class="btn primary" href="#/quiz/mock">Full mock exam · 80 Q · 4 hr</a>
+    <p class="dim small">Questions are drawn to match the PSI outline: 18 wiring methods, 15 branch circuits, 10 equipment, 9 services, 9 special, 6 theory/calcs, 5 motors, 3 feeders, 3 disconnects, 2 renewable.</p>
     <div class="grid2"><a class="btn" href="#/quiz/timed/20">20 Q · 60 min</a><a class="btn" href="#/quiz/timed/40">40 Q · 2 hr</a></div>
     <h2>By section</h2>
     <div class="list">${MODULES.map(m => `<a class="item" href="#/quiz/module/${m.id}"><div class="ico">${m.icon}</div>
@@ -250,6 +252,30 @@ views.cards = () => {
   show(false);
 };
 
+/* Texas journeyman exam outline (PSI bulletin): subject -> sources ("module" or "module/lesson") and item count */
+const EXAM = [
+  ['Definitions, calculations, theory, plans', ['start/words', 'start/reading', 'calc/theory', 'calc/vd'], 6],
+  ['Services and separately derived systems', ['service', 'ground/service', 'ground/electrodes', 'ground/gec'], 9],
+  ['Feeders', ['branch/commercial', 'calc/commercial', 'ocpd/taps'], 3],
+  ['Branch circuits and conductors', ['branch', 'calc/derate', 'calc/dwelling', 'ch3/wire', 'ocpd/protect'], 15],
+  ['Wiring methods and materials', ['ch3', 'support', 'names/raceways', 'names/fittings', 'names/boxes', 'ground/egc', 'ground/bonding', 'calc/fill'], 18],
+  ['Equipment and devices', ['equip', 'ch1', 'ocpd/ratings', 'ocpd/location'], 10],
+  ['Motors and generators', ['motors/flc', 'motors/conductors', 'motors/ocpd', 'motors/gen'], 5],
+  ['Control devices and disconnecting means', ['motors/disconnect', 'motors/ac', 'service/disconnect'], 3],
+  ['Special occupancies, equipment, conditions', ['ch5', 'ch6/pools1', 'ch6/pools2', 'ch6/other', 'ch7/emergency', 'ch7/lowvolt', 'ch7/comm'], 9],
+  ['Renewable energy', ['ch6/pv', 'ch7/interconnect'], 2]
+];
+function mockExam() {
+  const used = new Set(), out = [];
+  for (const [, src, n] of EXAM) {
+    const pool = shuffle(QUESTIONS.filter(q => q.t !== 'find' && !used.has(q.id) && src.some(s => s === q.m || s === q.m + '/' + q.l)));
+    for (const q of pool.slice(0, n)) { used.add(q.id); out.push(q); }
+  }
+  // top up from anything left if a subject ran short
+  for (const q of shuffle(QUESTIONS.filter(q => q.t !== 'find' && !used.has(q.id)))) { if (out.length >= 80) break; out.push(q); }
+  return shuffle(out);
+}
+
 /* multiple-choice quiz / timed test */
 views.quiz = ([kind, a, b]) => {
   let pool, title, timed = 0;
@@ -258,8 +284,9 @@ views.quiz = ([kind, a, b]) => {
   else if (kind === 'find') { pool = QUESTIONS.filter(q => q.t === 'find'); title = 'Find it in the book'; }
   else if (kind === 'missed') { pool = QUESTIONS.filter(q => prog.q[q.id] && prog.q[q.id].b === 0); title = 'Missed questions'; }
   else if (kind === 'timed') { timed = +a || 20; pool = QUESTIONS; title = `Timed test · ${timed} Q`; }
+  else if (kind === 'mock') { timed = 80; pool = mockExam(); title = 'Mock exam · 80 Q'; }
   else { pool = QUESTIONS; title = 'Mixed quiz'; }
-  const list = shuffle(pool).slice(0, timed || (kind === 'lesson' ? 99 : 10));
+  const list = kind === 'mock' ? pool : shuffle(pool).slice(0, timed || (kind === 'lesson' ? 99 : 10));
   if (!list.length) { app.innerHTML = `<h1>${esc(title || 'Quiz')}</h1><p>Nothing here yet.</p><a class="btn" href="#/practice">Back</a>`; return; }
   const answers = [], end = timed ? Date.now() + timed * 3 * 60e3 : 0;
   let i = 0, tick;
