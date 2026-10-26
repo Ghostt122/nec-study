@@ -2,7 +2,7 @@
 const CACHE = 'nec-study';
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(['./', 'index.html', 'app.js', 'manifest.webmanifest', 'icon-180.png',
-    'content/start.js', 'content/names.js', 'content/support.js', 'content/bending.js', 'content/safety.js', 'content/ch1.js', 'content/ch2branch.js', 'content/ch2service.js', 'content/ch2ocpd.js', 'content/ch2ground.js', 'content/ch3.js'])));
+    'content/start.js', 'content/names.js', 'content/support.js', 'content/bending.js', 'content/safety.js', 'content/ch1.js', 'content/ch2branch.js', 'content/ch2service.js', 'content/ch2ocpd.js', 'content/ch2ground.js', 'content/ch3.js', 'content/ch4equip.js', 'content/ch4motors.js'])));
   self.skipWaiting();
 });
 self.addEventListener('activate', e => e.waitUntil(self.clients.claim()));
