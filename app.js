@@ -9,9 +9,8 @@ const hash = s => { let h = 5381; for (const ch of s) h = (h * 33 ^ ch.charCodeA
 
 /* ---------- content index ---------- */
 const QUESTIONS = [];
-for (const m of MODULES) for (const q of m.questions || []) {
-  q.m = m.id; q.id = m.id + '.' + hash(q.q); QUESTIONS.push(q);
-}
+const indexModule = m => { for (const q of m.questions || []) { q.m = m.id; q.id = m.id + '.' + hash(q.q); QUESTIONS.push(q); } };
+MODULES.forEach(indexModule);
 const modById = id => MODULES.find(m => m.id === id);
 const lessonQs = (mid, lid) => QUESTIONS.filter(q => q.m === mid && q.l === lid);
 
@@ -88,6 +87,24 @@ async function importBook(file, onProgress) {
   try { await navigator.storage?.persist?.(); } catch { /* best effort */ }
 }
 
+/* ---------- private company pack (.necpack): lessons + full policy text, stored only on this device ---------- */
+let pack = null;
+async function loadPack() {
+  try { pack = await DB.get('meta', 'pack') || null; } catch { pack = null; }
+  if (pack) for (const m of pack.modules) { m.pack = true; MODULES.push(m); indexModule(m); }
+}
+async function importFile(file, onProgress) {
+  const magic = new TextDecoder().decode(await file.slice(0, 8).arrayBuffer());
+  if (magic === 'NECBOOK1') return importBook(file, onProgress);
+  if (magic !== 'NECPACK1') throw Error("That file isn't a .necbook or .necpack file.");
+  const p = JSON.parse(await file.slice(8).text());
+  if (!Array.isArray(p.modules) || !p.docs) throw Error('That pack file is damaged.');
+  await DB.put('meta', [['pack', p]]);
+  onProgress(1);
+  location.reload(); // re-index lessons and questions with the pack included
+}
+const refLabel = r => r.startsWith('doc:') ? '📄 ' + (pack?.docs?.[r.slice(4)]?.title || 'Company policy') : r;
+
 function normRef(r) {
   r = r.trim().replace(/\s+/g, ' ');
   let m;
@@ -109,12 +126,16 @@ function findKey(r) {
 }
 
 /* refs in lesson text: [[358.30(A)]] */
-const refs = html => html.replace(/\[\[([^\]]+)\]\]/g, (_, r) => `<button class="ref" data-ref="${esc(r)}">${esc(r)}</button>`);
+const refs = html => html.replace(/\[\[([^\]]+)\]\]/g, (_, r) => {
+  if (r.startsWith('img:')) { const src = pack?.images?.[r.slice(4)]; return src ? `<img class="packimg" src="${src}" alt="">` : ''; }
+  return `<button class="ref${r.startsWith('doc:') ? ' docref' : ''}" data-ref="${esc(r)}">${esc(refLabel(r))}</button>`;
+});
 document.addEventListener('click', e => {
   const b = e.target.closest('button.ref');
   if (b) { e.preventDefault(); openRef(b.dataset.ref); }
 });
 async function openRef(r) {
+  if (r.startsWith('doc:')) { location.hash = '#/doc/' + encodeURIComponent(r.slice(4)); return; }
   await loadBook();
   const k = findKey(r);
   if (k) { const [p, y, c = 0] = book.idx[k]; location.hash = `#/page/${p}/${y}/${c}/${encodeURIComponent(r)}`; return; }
@@ -144,7 +165,7 @@ function route() {
   (views[name] || views.home)(parts.slice(1).map(decodeURIComponent), new URLSearchParams(query));
   if (name !== 'page') window.scrollTo(0, 0);
 }
-const TAB_OF = { m: 'learn', l: 'learn', quiz: 'practice', cards: 'practice', page: 'book' };
+const TAB_OF = { m: 'learn', l: 'learn', doc: 'learn', quiz: 'practice', cards: 'practice', page: 'book' };
 addEventListener('hashchange', route);
 
 function moduleStats(m) {
@@ -241,7 +262,7 @@ views.cards = () => {
     app.innerHTML = `<div class="row"><a href="#/practice" class="dim grow">← Practice</a><span class="dim">${i + 1}/${list.length}</span></div>
       <div class="card flash"><div class="q">${esc(q.q)}</div>
       ${flip ? `<div class="why"><b style="color:var(--good)">${esc(q.c[0])}</b><p>${refs(esc(q.w || ''))}</p>
-        ${q.r ? `<button class="ref" data-ref="${esc(q.r)}">${esc(q.r)}</button>` : ''}</div>` : ''}</div>
+        ${q.r ? `<button class="ref" data-ref="${esc(q.r)}">${esc(refLabel(q.r))}</button>` : ''}</div>` : ''}</div>
       ${flip ? `<div class="grid2"><button class="btn" data-g="0">✗ Missed it</button><button class="btn primary" data-g="1">✓ Knew it</button></div>`
              : `<button class="btn primary" data-flip>Show answer</button>`}`;
     $('[data-flip]')?.addEventListener('click', () => show(true));
@@ -299,7 +320,7 @@ views.quiz = ([kind, a, b]) => {
         <div><b>${x?.ok ? '✓' : '✗'}</b> ${esc(q.q)}</div>
         ${x && !x.ok ? `<div class="small" style="color:var(--bad)">You: ${esc(x.pick ?? '(no answer)')}</div>` : ''}
         <div class="small" style="color:var(--good)">${esc(q.c[0])}</div>
-        <div class="small dim">${refs(esc(q.w || ''))}</div>${q.r ? `<button class="ref" data-ref="${esc(q.r)}">${esc(q.r)}</button>` : ''}</div>`; }).join('')}
+        <div class="small dim">${refs(esc(q.w || ''))}</div>${q.r ? `<button class="ref" data-ref="${esc(q.r)}">${esc(refLabel(q.r))}</button>` : ''}</div>`; }).join('')}
       <a class="btn primary" href="#/practice">Done</a>`;
   };
   const show = () => {
@@ -318,7 +339,7 @@ views.quiz = ([kind, a, b]) => {
       if (timed) { i++; return show(); }
       app.querySelectorAll('.choice').forEach(x => x.classList.add(x.dataset.o === q.c[0] ? 'right' : x === btn ? 'wrong' : 'x'));
       $('#fb').innerHTML = `<div class="why"><b>${ok ? '✓ Right' : '✗ Not quite'}</b><p>${refs(esc(q.w || ''))}</p>
-        ${q.r ? `<button class="ref" data-ref="${esc(q.r)}">Read it: ${esc(q.r)}</button>` : ''}</div>
+        ${q.r ? `<button class="ref" data-ref="${esc(q.r)}">Read it: ${esc(refLabel(q.r))}</button>` : ''}</div>
         <button class="btn primary" id="nx">${i + 1 < list.length ? 'Next' : 'See score'}</button>`;
       $('#nx').addEventListener('click', () => { i++; show(); });
       $('#fb').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -353,7 +374,7 @@ views.book = async (_, qs) => {
       const f = e.target.files[0]; if (!f) return;
       const out = $('#imp');
       try {
-        await importBook(f, p => { out.textContent = `Importing… ${Math.round(p * 100)}%`; });
+        await importFile(f, p => { out.textContent = `Importing… ${Math.round(p * 100)}%`; });
         out.textContent = 'Done ✓'; route();
       } catch (err) { out.innerHTML = `<span style="color:var(--bad)">Import failed: ${esc(err.message)}</span>`; }
     });
@@ -433,13 +454,42 @@ const VOL = { 18: 1.5, 16: 1.75, 14: 2, 12: 2.25, 10: 2.5, 8: 3, 6: 5 }; // Tabl
 views.tools = ([which]) => {
   if (which === 'bend') return bendTool();
   if (which === 'box') return boxTool();
+  if (which === 'pack') return packTool();
   app.innerHTML = `<h1>Tools</h1>
     <div class="list">
       <a class="item" href="#/tools/bend"><div class="ico">↪️</div><div class="grow"><div class="t">Bending calculator</div><div class="s">Offsets, rolling offsets, 3-point saddles, 90° stubs</div></div></a>
       <a class="item" href="#/tools/box"><div class="ico">📦</div><div class="grow"><div class="t">Box fill calculator</div><div class="s">Will it fit? 314.16</div></div></a>
+      <a class="item" href="#/tools/pack"><div class="ico">🏢</div><div class="grow"><div class="t">Company pack</div><div class="s">${pack ? esc(pack.title) + ' · imported' : 'Import your private company policies'}</div></div></a>
       <a class="item" href="#/progress"><div class="ico">📊</div><div class="grow"><div class="t">My progress</div><div class="s">Scores, streak, reset</div></div></a>
     </div>`;
 };
+function packTool() {
+  app.innerHTML = `<a href="#/tools" class="dim">← Tools</a><h1>Company pack</h1>
+    <p class="small dim">A company pack adds your employer's policies, lessons, and quizzes. Like your code book, it's loaded from a file on this phone and stored only here. It's never on the website.</p>
+    ${pack ? `<div class="card"><b>${esc(pack.title)}</b><div class="small dim">${pack.modules.length} sections · ${Object.keys(pack.docs).length} policies</div>
+      <a class="btn" href="#/learn">Open lessons</a><button class="btn" id="rm" style="color:var(--bad)">Remove pack from this phone</button></div>` : ''}
+    <label class="btn primary" style="position:relative">${pack ? 'Replace with a newer pack…' : 'Choose pack file (.necpack)…'}<input type="file" id="pf" style="position:absolute;inset:0;opacity:0"></label>
+    <div id="imp" class="dim"></div>`;
+  $('#pf').addEventListener('change', async e => {
+    const f = e.target.files[0]; if (!f) return;
+    try { $('#imp').textContent = 'Importing…'; await importFile(f, () => {}); }
+    catch (err) { $('#imp').innerHTML = `<span style="color:var(--bad)">Import failed: ${esc(err.message)}</span>`; }
+  });
+  $('#rm')?.addEventListener('click', async () => {
+    if (!confirm('Remove the company pack (policies, lessons, quizzes) from this phone?')) return;
+    await DB.put('meta', [['pack', null]]); location.reload();
+  });
+}
+
+views.doc = ([id]) => {
+  const d = pack?.docs?.[id];
+  if (!d) { app.innerHTML = `<h1>Policy not available</h1><p>Import your company pack first.</p><a class="btn" href="#/tools/pack">Company pack</a>`; return; }
+  app.innerHTML = `<button class="btn small" onclick="history.back()">← Back</button>
+    <h1>${esc(d.title)}</h1><p class="dim small">${esc(pack.title)} · full policy text, exactly as written</p>
+    ${(d.images || []).map(src => `<img class="packimg" src="${src}" alt="">`).join('')}
+    <div class="doctext">${esc(d.text)}</div>`;
+};
+
 function bendTool() {
   app.innerHTML = `<a href="#/tools" class="dim">← Tools</a><h1>Bending calculator</h1>
     <label>What are you bending?</label>
@@ -534,5 +584,5 @@ views.progress = () => {
   $('#wipe').onclick = () => { if (confirm('Erase all lesson progress and quiz history?')) { prog.done = {}; prog.q = {}; prog.days = {}; save(); route(); } };
 };
 
-route();
+loadPack().then(route);
 if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js');
