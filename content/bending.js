@@ -23,7 +23,11 @@
 </ul>
 <div class="warn"><b>Code limits</b>Bends can't damage the pipe or reduce its inside diameter (no kinks or flattened spots), and the radius must be at least what's in [[Ch9 Table 2]] ([[358.24(A)]]). Total bends between pull points: <b>360° max</b> ([[358.24(B)]]), and new in 2026, [[300.24]] applies the same 360° limit to a run that mixes conduit and tubing types. That's four 90s, and offsets and saddles count too (a 30° offset = 60°, a 3-point saddle = 90°).</div>
 <p>[[Ch9 Table 2]] minimum radius (one-shot and full-shoe benders) to the centerline of the pipe: ½" = <b>4"</b>, ¾" = <b>4½"</b>, 1" = <b>5¾"</b>, 1¼" = <b>7¼"</b>. Factory hand benders are made to meet this. PVC field bends must be made only with <b>identified bending equipment</b> (such as a PVC heater box or heat blanket made for the job) ([[352.24(A)]]).</p>
-<div class="tip"><b>NEC vs. trade</b>Only the radius, the no-damage rule, and the 360° limit are NEC rules. Take-ups, multipliers, shrink, and bender marks below are standard trade practice; check the numbers stamped on your own bender.</div>`
+<div class="tip"><b>NEC vs. trade</b>Only the radius, the no-damage rule, and the 360° limit are NEC rules. Take-ups, multipliers, shrink, and bender marks below are standard trade practice; check the numbers stamped on your own bender.</div>
+<h3>What it looks like</h3>
+[[photo:bender]]
+[[photo:bender-chart]]
+[[photo:bending-foot]]`
     },
     {
       id: 'ninety', title: '90° stub-ups and back-to-backs',
@@ -61,7 +65,9 @@
 <li>Bend the first mark at the arrow to your angle. Slide to the second mark, <b>roll the pipe 180°</b>, and bend the same angle.</li>
 </ol>
 <div class="tip"><b>Why 30°?</b>The multiplier is 2, so the math is easy, and it pulls easily. Smaller angles (10°, 22½°) make gentle offsets that pull easier but take more room.</div>
-<div class="test"><b>The math behind it</b>The multiplier is the cosecant of the angle (1 ÷ sin θ). Shrink per inch is cosecant minus cotangent, which equals the tangent of half the angle; the table rounds it to the nearest 16th. You don't need trig on the job; just remember the table.</div>`
+<div class="test"><b>The math behind it</b>The multiplier is the cosecant of the angle (1 ÷ sin θ). Shrink per inch is cosecant minus cotangent, which equals the tangent of half the angle; the table rounds it to the nearest 16th. You don't need trig on the job; just remember the table.</div>
+<h3>What it looks like</h3>
+[[photo:offset-box]]`
     },
     {
       id: 'saddle', title: 'Saddles',

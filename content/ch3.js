@@ -297,7 +297,10 @@
 <li>RMC, IMC, and EMT are permitted as the EGC ([[344.60]], [[342.60]], [[358.60]]). PVC is not, so pull a green wire.</li>
 <li>FMC and LFMC can be the EGC only within the limits of 250.118 and only where flexibility isn't needed after installation. Where it is (motor vibration, equipment that moves), install a wire EGC ([[348.60]], [[350.60]]).</li>
 </ul>
-<div class="job"><b>On the job</b>Count your bends before you start a run. If you're past 360°, set a pull box or conduit body. Ream every cut, tighten every set screw, and pull a green in anything plastic or flexible.</div>`
+<div class="job"><b>On the job</b>Count your bends before you start a run. If you're past 360°, set a pull box or conduit body. Ream every cut, tighten every set screw, and pull a green in anything plastic or flexible.</div>
+<h3>What it looks like</h3>
+[[photo:cut-jagged]]
+[[photo:reamer]]`
     }
   ],
   questions: [

@@ -127,6 +127,10 @@ function findKey(r) {
 
 /* refs in lesson text: [[358.30(A)]] */
 const refs = html => html.replace(/\[\[([^\]]+)\]\]/g, (_, r) => {
+  if (r.startsWith('photo:')) {
+    const p = window.PHOTOS?.[r.slice(6)];
+    return p ? `<figure class="photo"><img src="img/${r.slice(6)}.webp" alt="${esc(p.cap.replace(/\[\[[^\]]+\]\]/g, ''))}" loading="lazy"><figcaption>${refs(esc(p.cap))}<small>Photo: <a href="${p.page}" target="_blank" rel="noopener">${esc(p.by)}, ${esc(p.lic)}</a>, resized</small></figcaption></figure>` : '';
+  }
   if (r.startsWith('img:')) { const src = pack?.images?.[r.slice(4)]; return src ? `<img class="packimg" src="${src}" alt="">` : ''; }
   return `<button class="ref${r.startsWith('doc:') ? ' docref' : ''}" data-ref="${esc(r)}">${esc(refLabel(r))}</button>`;
 });

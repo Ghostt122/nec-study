@@ -69,7 +69,15 @@ ${fig(D.flex, 'LFMC', '"Sealtite," liquidtight flex. Art 350')}
 <tr><td><b>Surface raceway</b> ("Wiremold")</td><td>[[Art 386]]</td><td>Low-profile metal raceway that mounts on finished walls.</td></tr>
 <tr><td><b>Cable tray</b></td><td>[[Art 392]]</td><td>Ladder-style or solid-bottom tray that supports cables (not a raceway). Big in industrial plants.</td></tr>
 </table></div>
-<div class="job"><b>On the job</b>When someone says "pipe" in commercial work they usually mean EMT. "Rigid" or "GRC" means RMC. Sizes are trade sizes: "half-inch," "three-quarter," "inch," "inch-and-a-quarter."</div>`
+<div class="job"><b>On the job</b>When someone says "pipe" in commercial work they usually mean EMT. "Rigid" or "GRC" means RMC. Sizes are trade sizes: "half-inch," "three-quarter," "inch," "inch-and-a-quarter."</div>
+<h3>What it looks like</h3>
+[[photo:emt-fittings]]
+[[photo:pvc]]
+[[photo:ent]]
+[[photo:conduit-strut]]
+[[photo:deck-conduit]]
+[[photo:pvc-stubups]]
+[[photo:duct-bank]]`
     },
     {
       id: 'cables', title: 'Cables',
@@ -89,7 +97,11 @@ ${fig(D.nm, 'NM ("Romex")', 'Nonmetallic-sheathed. Art 334')}
 <tr><td><b>TC</b> tray cable</td><td>[[Art 336]]</td><td>Industrial control and power cable for cable trays.</td></tr>
 <tr><td><b>MI</b> mineral-insulated cable</td><td>[[Art 332]]</td><td>Copper tube packed with mineral insulation. Fire-rated circuits.</td></tr>
 </table></div>
-<div class="tip"><b>Remember</b>MC with a green wire: the green wire is the ground. AC (BX): the armor plus the bonding strip is the ground path, and the redhead bushing protects the wires from the cut armor edge.</div>`
+<div class="tip"><b>Remember</b>MC with a green wire: the green wire is the ground. AC (BX): the armor plus the bonding strip is the ground path, and the redhead bushing protects the wires from the cut armor edge.</div>
+<h3>What it looks like</h3>
+[[photo:nm]]
+[[photo:cable-tray]]
+[[photo:tray-trapeze]]`
     },
     {
       id: 'fittings', title: 'Fittings: connectors, couplings, locknuts, bushings',
@@ -118,7 +130,10 @@ ${fig(D.sweep, 'Elbow / sweep', 'Factory 90° bend')}
 <li><b>Nipple</b>: a short piece of pipe, usually threaded on both ends. A nipple <b>24 in. or shorter</b> between boxes can be filled to 60% (Chapter 9, Note 4).</li>
 <li><b>PVC terminal adapter / female adapter</b>: glues onto PVC so it can screw into a box with a locknut.</li>
 </ul>
-<div class="job"><b>On the job</b>"Raintight" (compression) fittings outside, set-screw inside. Ream every cut end ([[358.28(A)]]), and make every set screw tight. Loose EMT fittings break the ground path.</div>`
+<div class="job"><b>On the job</b>"Raintight" (compression) fittings outside, set-screw inside. Ream every cut end ([[358.28(A)]]), and make every set screw tight. Loose EMT fittings break the ground path.</div>
+<h3>What it looks like</h3>
+[[photo:straps-fittings]]
+[[photo:ac-connectors]]`
     },
     {
       id: 'boxes', title: 'Boxes and conduit bodies',
@@ -143,7 +158,12 @@ ${fig(D.tee, 'T', 'Three openings')}
 </table></div>
 <p>Boxes are covered in [[Art 314]]. Supporting boxes: [[314.23]]. How many wires fit (box fill): [[314.16]].</p>
 <div class="tip"><b>Conduit body trick</b>Hold it upright like a capital L, with the end hub pointing up and the straight side facing you. The side the cover (and the side opening) is on gives the letter: on the back = LB, on the left = LL, on the right = LR. In practice, an LB is "the one that turns a corner through the wall."</div>
-<p>Conduit bodies with 6 AWG or smaller must have at least twice the cross-section of the largest conduit attached, and can only hold splices if they're marked with their volume ([[314.16(C)]]). Every conduit body gets a cover ([[314.25]]).</p>`
+<p>Conduit bodies with 6 AWG or smaller must have at least twice the cross-section of the largest conduit attached, and can only hold splices if they're marked with their volume ([[314.16(C)]]). Every conduit body gets a cover ([[314.25]]).</p>
+<h3>What it looks like</h3>
+[[photo:box-4sq]]
+[[photo:box-4sq-deep]]
+[[photo:box-handy]]
+[[photo:offset-box]]`
     },
     {
       id: 'supports', title: 'Supports and hardware',
@@ -168,7 +188,10 @@ ${fig(D.anchor, 'Anchor', 'Tapcon, wedge anchor, drop-in')}
 <li><b>Minerallac</b>: a hanger strap that hammers onto a beam or nails into wood.</li>
 <li><b>Independent support wire</b>: a separate, marked hanger wire for wiring above a drop ceiling. You can't use the ceiling grid wires ([[300.13(B)]]).</li>
 </ul>
-<div class="warn"><b>Never</b>Support pipe, boxes, or cable from drop-ceiling grid wires or the grid itself, from other trades' pipes, or from other conduits (unless the raceway is identified as a support). See [[300.13]].</div>`
+<div class="warn"><b>Never</b>Support pipe, boxes, or cable from drop-ceiling grid wires or the grid itself, from other trades' pipes, or from other conduits (unless the raceway is identified as a support). See [[300.13]].</div>
+<h3>What it looks like</h3>
+[[photo:strut-trapeze]]
+[[photo:spring-nut]]`
     },
     {
       id: 'tools', title: 'Tools of the trade',
@@ -195,7 +218,32 @@ ${fig(D.ko, 'Knockout punch', 'Makes holes in boxes')}
 <tr><td>Torque screwdriver / torque wrench</td><td>Terminations must be torqued to the listed value with a calibrated tool ([[110.14(D)]])</td></tr>
 <tr><td>Multimeter / non-contact tester</td><td>Testing voltage. Always <b>test before touch</b>, and test your meter on a known live source first.</td></tr>
 <tr><td>Torpedo level</td><td>Plumb and level pipe and boxes. Neat work is required ([[110.12]]).</td></tr>
-</table></div>`
+</table></div>
+<h3>What it looks like</h3>
+[[photo:bender]]
+[[photo:tubing-cutter]]
+[[photo:reamer]]
+[[photo:fish-tape]]
+[[photo:lineman]]
+[[photo:longnose]]
+[[photo:stripper]]
+[[photo:multimeter]]
+[[photo:clamp-meter]]
+[[photo:tester]]
+[[photo:tape]]`
+    },
+    {
+      id: 'gear', title: "Equipment you'll see (photos)",
+      html: `
+<p>Real photos of equipment you'll work on. Tap a section button to read what the code says about it.</p>
+[[photo:panel]]
+[[photo:safety-switch]]
+[[photo:mcc]]
+[[photo:padmount]]
+[[photo:meter-base]]
+[[photo:service-mast]]
+[[photo:receptacles]]
+[[photo:gfci]]`
     }
   ],
   questions: [

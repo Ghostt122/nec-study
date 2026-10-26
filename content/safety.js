@@ -57,7 +57,9 @@
 <li>Hearing protection around hammer drills, band saws, and powder-actuated tools.</li>
 <li>No metal jewelry (rings, chains) when working near anything energized.</li>
 </ul>
-<div class="warn"><b>As an apprentice</b>You should not be inside a panel that's live. If you're asked to, say you're not qualified for energized work and get your journeyman or foreman.</div>`
+<div class="warn"><b>As an apprentice</b>You should not be inside a panel that's live. If you're asked to, say you're not qualified for energized work and get your journeyman or foreman.</div>
+<h3>What it looks like</h3>
+[[photo:arc-ppe]]`
     },
     {
       id: 'heights', title: 'Ladders, lifts, and falls',
@@ -77,7 +79,9 @@
 <li>Get trained and familiarized on each lift before you operate it. Check overhead for power lines.</li>
 </ul>
 <h3>Fall protection</h3>
-<p>On construction sites, OSHA's general trigger height for fall protection is <b>6 ft</b> (guardrails, nets, or personal fall arrest). Ladder, lift, and fall numbers in this lesson are OSHA construction rules, not NEC.</p>`
+<p>On construction sites, OSHA's general trigger height for fall protection is <b>6 ft</b> (guardrails, nets, or personal fall arrest). Ladder, lift, and fall numbers in this lesson are OSHA construction rules, not NEC.</p>
+<h3>What it looks like</h3>
+[[photo:scissor-lift]]`
     },
     {
       id: 'site', title: 'Jobsite: temp power, trenches, tools',
