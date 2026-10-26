@@ -28,14 +28,20 @@
 <ul>
 <li>A grounded service gets a GEC connected to the neutral at the service, anywhere from the load end of the service drop or lateral to the service disconnect's neutral terminal ([[250.24(A)]]).</li>
 <li>The neutral must be brought to every service disconnect, even if there are no neutral loads, because it's the fault return path to the utility ([[250.24(D)]]). It can't be smaller than [[Table 250.102(C)(1)]] requires.</li>
-<li>An <b>unspliced main bonding jumper</b> connects the neutral to the EGCs and the service enclosure ([[250.24(C)]]). It's sized from Table 250.102(C)(1) ([[250.28(D)]]).</li>
+<li>An <b>unspliced main bonding jumper</b> connects the neutral to the EGCs and the service enclosure ([[250.24(C)]]). It's sized from Table 250.102(C)(1) ([[250.28(D)]]). It can be a wire, bus, or screw. If it's only a screw, the screw must have a <b>green finish</b> you can see with it installed ([[250.28(B)]]).</li>
 <li><b>Downstream, never again</b>: on the load side of the service disconnect, the neutral must not be connected to equipment grounding conductors or metal parts ([[250.24(B)]], [[250.142(B)]]).</li>
 </ul>
 <div class="warn"><b>Subpanels</b>In a subpanel, the <b>neutral bar is isolated</b> (bonding screw removed) and the grounds go on a separate ground bar bonded to the can. If you bond neutral to ground there, normal neutral current flows on every pipe and ground wire. That's "objectionable current," a shock and fire hazard ([[250.6]]).</div>
-<h3>Separately derived systems (transformers)</h3>
-<p>A transformer creates a new system, so it needs its own <b>system bonding jumper</b> (at the transformer or at the first disconnect, not both) and its own grounding electrode connection ([[250.30(A)]]).</p>
+<h3>Separately derived systems (transformers) [[250.30]]</h3>
+<p>A transformer (like a 480 V to 208Y/120 V dry-type) creates a new system, so its neutral gets bonded and grounded all over again:</p>
+<ul>
+<li><b>System bonding jumper (SBJ)</b>: unspliced, sized from Table 250.102(C)(1), installed at <b>one single point</b> anywhere from the transformer to the first disconnect or OCPD ([[250.30(A)(1)]]). The only time both ends are allowed is an outdoor transformer feeding a building, and only if it doesn't create a parallel neutral path.</li>
+<li><b>Supply-side bonding jumper</b>: if the transformer and the first disconnect are in separate enclosures, one runs with the secondary conductors. It's sized from Table 250.102(C)(1) for the derived conductors, and a nonflexible metal raceway can serve as it ([[250.30(A)(2)]]).</li>
+<li><b>Electrode</b>: use the building's grounding electrode system ([[250.30(A)(4)]]). The GEC is sized from Table 250.66 for the derived conductors and connects at the <b>same point</b> as the SBJ ([[250.30(A)(5)]]).</li>
+<li>Metal water piping and exposed building steel in the area the transformer serves get bonded to its neutral at that same point. Size from Table 250.102(C)(1), never more than 3/0 Cu or 250 kcmil Al ([[250.104(D)]]).</li>
+</ul>
 <h3>Separate buildings</h3>
-<p>A building fed by a feeder from another building gets an <b>EGC run with the feeder</b>, its own grounding electrode, and the <b>neutral kept separate</b> from ground at that building ([[250.32(B)]]). Old installs that used the neutral as the ground return are allowed to remain only under strict conditions.</p>`
+<p>A building fed by a feeder from another building gets an <b>EGC run with the feeder</b>, its own grounding electrode, and the <b>neutral kept separate</b> from ground at that building ([[250.32(B)]]). Old installs that used the neutral as the ground return are allowed to remain only under strict conditions. A building fed by only <b>one branch circuit</b> (a multiwire branch circuit counts as one) that has an EGC doesn't need its own electrode ([[250.32(A)]]).</p>`
     },
     {
       id: 'electrodes', title: 'Grounding electrodes',
@@ -58,6 +64,14 @@
 <li>The top is flush with or below grade unless the end and the clamp are protected.</li>
 <li><b>One rod must be supplemented</b> by a second electrode, unless the single rod has a resistance to earth of <b>25 ohms or less</b>.</li>
 <li>Multiple rods must be at least <b>6 ft</b> apart.</li>
+<li>The bonding jumper that's the <b>only</b> connection to a supplemental rod, pipe, or plate never has to be larger than <b>6 AWG copper</b> (4 AWG Al) ([[250.53(E)]]).</li>
+</ul>
+<h3>Tying the system together</h3>
+<ul>
+<li>Bonding jumpers between electrodes are sized from Table 250.66. <b>Rebar can't be used</b> as the conductor that connects electrodes together ([[250.53(C)]]).</li>
+<li>A water pipe electrode's ground path can't depend on the <b>water meter</b>, filters, or similar equipment, so jump around them ([[250.53(D)]]).</li>
+<li>Ground clamps must be listed for the electrode and conductor materials. <b>One conductor per clamp</b> unless the clamp is listed for more. Clamps that get buried or encased must be listed for direct burial or concrete encasement ([[250.70]]).</li>
+<li>Every system in a building uses the <b>same</b> grounding electrode system ([[250.58]]). Lightning protection ground terminals are bonded to it too ([[250.106]]).</li>
 </ul>
 <div class="job"><b>On the job</b>On commercial jobs, the electrician ties into the footing rebar (Ufer) before the concrete pour, usually with a 4 AWG copper tail coming up. Miss that and it's gone forever.</div>`
     },
@@ -80,21 +94,29 @@
 <h3>Installation [[250.64]]</h3>
 <ul>
 <li>6 AWG or larger, not exposed to damage: can run along the building surface without protection. Exposed to damage: protect it in RMC, IMC, Schedule 80 PVC, RTRC-XW, EMT, or cable armor. Smaller than 6 AWG: must always be protected ([[250.64(B)]]).</li>
-<li>One <b>continuous</b> length, no splices, except irreversible compression connectors, exothermic welds, busbars, or structural steel and water pipe connections ([[250.64(C)]]).</li>
-<li>Ferrous (steel) raceways around a GEC must be bonded at both ends, or the steel acts as a choke on fault current ([[250.64(E)]]).</li>
+<li>One <b>continuous</b> length, no splices, except: irreversible compression connectors listed as grounding and bonding equipment, exothermic welds, splices at accessible locations with listed grounding and bonding equipment, busbar sections, and connections of building steel or metal water pipe ([[250.64(C)]]).</li>
+<li>Ferrous (steel) raceways, enclosures, and cable armor around a GEC must be continuous and <b>bonded at each end</b> to the GEC or electrode, or the steel acts as a choke on fault current. The bonding jumper is at least the same size as the GEC inside. Nonferrous (aluminum) raceways don't have to be continuous ([[250.64(E)]]).</li>
+<li>Bare or covered aluminum GECs can't touch concrete or be used where corrosive. Outdoors, an aluminum GEC can't be terminated within <b>18 in.</b> of the earth ([[250.64(A)]]).</li>
+<li>Don't route a GEC through ventilation, mounting, or drain openings of an enclosure ([[250.64(G)]]).</li>
 <li>Connections to electrodes must be accessible, except buried or encased ones and exothermic or irreversible connections ([[250.68(A)]]).</li>
-<li>Interior metal water pipe can extend the electrode connection only within <b>5 ft</b> of where the pipe enters the building ([[250.68(C)]]).</li>
+<li>Interior metal water pipe can extend the electrode connection only within <b>5 ft</b> of where the pipe enters the building ([[250.68(C)]]). In industrial, commercial, and institutional buildings with only qualified people servicing it, exposed water pipe beyond 5 ft can be used.</li>
+<li>The building's <b>steel frame</b> can be used as a GEC or to connect electrodes together. A <b>rebar stub</b> brought out of the footing to an accessible spot can be the connection point for a concrete-encased electrode ([[250.68(C)]]).</li>
 </ul>`
     },
     {
       id: 'bonding', title: 'Bonding at the service and over 250 V',
       html: `
 <ul>
+<li><b>What gets bonded at the service</b>: every raceway, cable tray, auxiliary gutter, and service cable armor that holds service conductors, and every enclosure on them, like meter bases and boxes ([[250.92(A)]]).</li>
 <li><b>At the service</b>, locknuts alone are <b>not</b> enough to bond service raceways. Use threaded entries made up wrenchtight, threadless fittings made up tight, bonding locknuts, or <b>bonding bushings with jumpers</b>. Concentric or eccentric knockouts that aren't fully removed, and reducing washers, need a bonding jumper ([[250.92(B)]]).</li>
 <li><b>Over 250 V to ground</b> (480Y/277 V circuits), the same service bonding methods apply to raceways with other than service conductors ([[250.97]]). If no oversized or concentric knockouts are involved, two locknuts on rigid or IMC, or EMT connectors with a locknut inside, are OK.</li>
 <li><b>Intersystem bonding termination (IBT)</b>: a listed termination with room for at least <b>three</b> communications bonding conductors (phone, cable TV, satellite), outside the enclosure at the service and at disconnects for buildings fed by a feeder ([[250.94(A)]]).</li>
 <li><b>Bonding jumpers</b> on the load side of an OCPD are sized from [[Table 250.122]] ([[250.102(D)]]). Installed outside a raceway, a jumper can be at most <b>6 ft</b> long and must be routed with the raceway ([[250.102(E)]]).</li>
-<li><b>Metal water piping</b> must be bonded to the service enclosure, the neutral at the service, the GEC, or an electrode. The jumper is sized from Table 250.102(C)(1), but never needs to be larger than 3/0 Cu ([[250.104(A)]]). Other metal piping likely to become energized (including gas pipe) is bonded per [[250.104(B)]].</li>
+<li><b>Metal water piping</b> must be bonded to the service enclosure, the neutral at the service, the GEC, or an electrode. The jumper is sized from Table 250.102(C)(1), but never needs to be larger than 3/0 Cu ([[250.104(A)]]). Other metal piping likely to become energized (including gas pipe) is bonded per [[250.104(B)]], with a jumper sized from Table 250.122 using the rating of the circuit likely to energize it.</li>
+<li><b>Exposed building steel</b> that isn't intentionally grounded and is likely to become energized gets bonded, sized from Table 250.102(C)(1) up to 3/0 Cu max ([[250.104(C)]]).</li>
+<li><b>Expansion fittings</b> and telescoping sections in <b>metal</b> raceway must be bonded around with an equipment bonding jumper or other means, because the slip joint isn't a reliable ground path ([[250.98]]).</li>
+<li><b>Metal raceways and enclosures</b> for anything other than service conductors must be connected to the EGC. Short sections used only to protect or support cable are exempt ([[250.86]]).</li>
+<li><b>Isolated ground</b>: an equipment enclosure can be isolated from its raceway with a listed nonmetallic fitting at the enclosure, but the raceway still has to be grounded, and an insulated EGC is run inside to ground the equipment ([[250.96(B)]]).</li>
 </ul>`
     },
     {
@@ -109,9 +131,10 @@
 <li>The armor of AC cable. MC cable that contains an EGC wire, or whose metal sheath is listed and identified as an EGC.</li>
 <li>Cable tray (where 392.10 and 392.60 allow), other listed electrically continuous metal raceways, and surface metal raceways listed for grounding</li>
 <li><b>Not allowed</b> as EGCs: grounding electrode conductors (with a limited exception) and the <b>structural steel frame</b> of the building ([[250.118(B)]]).</li>
+<li>Where the <b>pipe is the ground</b>, every connection, joint, and fitting must be made tight ([[250.120(A)]]). A loose set screw is a broken ground.</li>
 </ul>
 <h3>Identification [[250.119]]</h3>
-<p>Green, green with yellow stripes, or bare. <b>4 AWG and larger</b> can be re-identified at each end and everywhere accessible by stripping the insulation, coloring it green, or wrapping green tape ([[250.119(B)]]).</p>
+<p>Green, green with yellow stripes, or bare. Green insulation can't be used for a hot or a neutral (a few low-voltage cable exceptions) ([[250.119(A)]]). <b>4 AWG and larger</b> can be re-identified at each end and everywhere accessible by stripping the insulation, coloring it green, or wrapping green tape ([[250.119(B)]]).</p>
 <h3>Sizing: [[Table 250.122]]</h3>
 <p>Based on the rating of the breaker or fuse ahead of the circuit:</p>
 <div class="tablewrap"><table>
@@ -131,13 +154,18 @@
 </table></div>
 <ul>
 <li>The EGC never has to be larger than the circuit conductors ([[250.122(A)]]).</li>
-<li><b>Upsized hots, upsized ground</b>: if the hots are increased in size (for voltage drop, for example), the wire EGC must be increased proportionally by circular mil area ([[250.122(D)]]).</li>
+<li><b>Upsized hots, upsized ground</b>: if the hots are increased in size (for voltage drop, for example), the wire EGC must be increased proportionally by circular mil area ([[250.122(D)]]). This doesn't apply when the hots were upsized only because of ambient temperature correction or adjustment for more than three conductors (310.15(B) or (C)).</li>
 <li>One EGC can serve multiple circuits in the same raceway if sized for the largest OCPD ([[250.122(E)]]).</li>
+<li><b>Motor circuits</b>: size the EGC from Table 250.122 using the rating of the motor branch-circuit short-circuit and ground-fault protective device ([[250.122(F)]]).</li>
+<li><b>Parallel runs</b> in separate raceways: each raceway gets its own wire EGC (if a wire EGC is used), sized from Table 250.122 for the <b>full</b> OCPD rating. You don't divide it among the pipes. It never has to be larger than the biggest hot in that raceway ([[250.122(H)]]).</li>
+<li>No switch or automatic cutout may be put in an EGC unless opening it disconnects all sources of energy ([[250.124]]).</li>
 </ul>
 <h3>In the box</h3>
 <ul>
 <li>All EGCs spliced or terminated in a box are connected together, arranged so removing a device doesn't break the ground path ([[250.148]]). Metal boxes get their own connection: a ground screw or listed clip.</li>
-<li>Receptacles in metal boxes need a bonding jumper to the box, except for surface-mounted boxes with direct metal-to-metal yoke contact, or self-grounding receptacles ([[250.146]]).</li>
+<li>Metal boxes need a connection to the EGC used for <b>no other purpose</b>, sized from Table 250.122 for the largest OCPD in the box ([[250.148(C)]]).</li>
+<li>Receptacles in metal boxes need a bonding jumper to the box, except for surface-mounted boxes with direct metal-to-metal yoke contact (remove at least one of the insulating washers), or self-grounding receptacles ([[250.146]]).</li>
+<li><b>Isolated ground receptacles</b> have the ground terminal insulated from the yoke and are connected to an insulated EGC run with the circuit ([[250.146(D)]]).</li>
 </ul>`
     }
   ],
@@ -201,6 +229,30 @@
     { t: 'find', l: 'egc', q: 'Where is the table for sizing equipment grounding conductors?', c: ['Table 250.122', 'Table 250.66', 'Table 250.102(C)(1)', 'Chapter 9 Table 8'], w: 'Table 250.122.', r: 'Table 250.122' },
     { t: 'find', l: 'egc', q: 'Where is the list of permitted grounding electrodes?', c: ['250.52(A)', '250.50', '250.53', '250.66'], w: '250.52(A).', r: '250.52(A)' },
     { t: 'find', l: 'egc', q: 'Where is the list of what can serve as an equipment grounding conductor?', c: ['250.118', '250.119', '250.122', '250.134'], w: '250.118.', r: '250.118' },
-    { t: 'find', l: 'egc', q: 'Where are the rules for grounding at a second building fed by a feeder?', c: ['250.32', '250.30', '250.24', '225.31'], w: '250.32.', r: '250.32' }
+    { t: 'find', l: 'egc', q: 'Where are the rules for grounding at a second building fed by a feeder?', c: ['250.32', '250.30', '250.24', '225.31'], w: '250.32.', r: '250.32' },
+    { l: 'service', q: 'If a main bonding jumper is a screw only, the screw must be:', c: ['Identified with a green finish visible with the screw installed', 'Brass', 'Painted white', 'Stainless steel'], w: '250.28(B).', r: '250.28(B)' },
+    { v: 1, l: 'service', q: 'Main bonding jumper size for a service with 500 kcmil copper conductors:', c: ['1/0 Cu', '2 Cu', '2/0 Cu', '3/0 Cu'], w: 'Table 250.102(C)(1): over 350 through 600 kcmil Cu → 1/0 Cu.', r: 'Table 250.102(C)(1)' },
+    { l: 'service', q: 'The system bonding jumper for a separately derived system (like a dry-type transformer) is installed:', c: ['At one point, anywhere from the source to the first disconnecting means or OCPD', 'At the transformer and at every panel it feeds', 'Only at the building service', 'At the first receptacle'], w: '250.30(A)(1): a single point, within the enclosure where it originates.', r: '250.30(A)' },
+    { l: 'service', q: 'The GEC for a separately derived system connects to the derived neutral at:', c: ['The same point where the system bonding jumper is connected', 'The building service only', 'Any downstream panel', 'The water heater'], w: '250.30(A)(5).', r: '250.30(A)' },
+    { l: 'service', q: 'A building supplied by only one branch circuit (with an EGC) must have its own grounding electrode.', c: ['False', 'True', 'True if over 120 V', 'True for multiwire circuits'], w: '250.32(A) Exception: a single branch circuit, including a multiwire branch circuit, with an EGC.', r: '250.32(A)' },
+    { l: 'electrodes', q: 'Rebar may be used as the conductor that interconnects the electrodes of a grounding electrode system.', c: ['False', 'True', 'True if 20 ft long', 'True in footings only'], w: '250.53(C): rebar shall not be used as a conductor to interconnect electrodes.', r: '250.53(C)' },
+    { l: 'electrodes', q: 'The bonding jumper that is the sole connection to a supplemental ground rod never has to be larger than:', c: ['6 AWG copper', '4 AWG copper', '8 AWG copper', '2 AWG copper'], w: '250.53(E): 6 AWG Cu or 4 AWG Al.', r: '250.53(E)' },
+    { l: 'electrodes', q: 'A ground ring must be installed at least ___ below the surface of the earth.', c: ['30 in.', '18 in.', '24 in.', '12 in.'], w: '750 mm (30 in.).', r: '250.53(F)' },
+    { l: 'electrodes', q: 'A plate electrode must expose at least ___ of surface to the soil.', c: ['2 ft²', '1 ft²', '4 ft²', '½ ft²'], w: '0.186 m² (2 ft²).', r: '250.52(A)' },
+    { l: 'electrodes', q: 'Unless the clamp is listed for more, how many conductors may be connected to an electrode by a single ground clamp?', c: ['One', 'Two', 'Three', 'Any number'], w: '250.70(A).', r: '250.70' },
+    { l: 'gec', q: 'A steel (ferrous) raceway that protects a GEC must be:', c: ['Bonded at each end to the GEC or the electrode', 'Left unbonded', 'Bonded at one end only', 'Replaced with PVC'], w: '250.64(E)(1): electrically continuous and bonded at each end.', r: '250.64(E)' },
+    { l: 'gec', q: 'Outside a building, an aluminum GEC may not be terminated within ___ of the earth.', c: ['18 in.', '12 in.', '6 in.', '24 in.'], w: '450 mm (18 in.).', r: '250.64(A)' },
+    { l: 'bonding', q: 'An expansion fitting in a run of metal conduit must be:', c: ['Made electrically continuous with a bonding jumper or other means', 'Left as is', 'Replaced with a coupling', 'Wrapped in tape'], w: '250.98: expansion, expansion-deflection, and telescoping sections of metal raceway.', r: '250.98' },
+    { l: 'bonding', q: 'A bonding jumper for metal gas piping that is likely to become energized is sized from:', c: ['Table 250.122, based on the circuit likely to energize the piping', 'Table 250.66', 'Table 250.102(C)(1)', 'Table 310.16'], w: '250.104(B).', r: '250.104(B)' },
+    { l: 'bonding', q: 'Service raceways, meter bases, and other enclosures for service conductors must be:', c: ['Bonded together', 'Isolated from each other', 'Grounded to a separate rod', 'Nonmetallic'], w: '250.92(A).', r: '250.92(A)' },
+    { l: 'egc', q: 'Where a metal raceway serves as the EGC, all connections, joints, and fittings must be:', c: ['Made tight', 'Taped', 'Painted', 'Welded'], w: '250.120(A).', r: '250.120(A)' },
+    { v: 1, l: 'egc', q: 'A feeder protected by a 400 A breaker runs in two parallel conduits. Minimum copper wire EGC in each conduit:', c: ['3 AWG', '6 AWG', '8 AWG', '1/0 AWG'], w: '250.122(H): each raceway gets an EGC sized for the full OCPD. Table 250.122: 400 A → 3 Cu.', r: '250.122(H)' },
+    { l: 'egc', q: 'A switch may be placed in an equipment grounding conductor:', c: ['Only if opening it disconnects all sources of energy', 'Any time', 'Only on 20 A circuits', 'If it is labeled'], w: '250.124(B).', r: '250.124' },
+    { l: 'egc', q: 'Green insulation may be used on a hot or neutral conductor in a power circuit.', c: ['False', 'True', 'True if taped at each end', 'True for 4 AWG and larger'], w: '250.119(A)(3), with exceptions only for certain low-voltage cables, cords, and traffic signals.', r: '250.119(A)' },
+    { l: 'egc', q: 'Hot conductors are upsized only to account for more than three current-carrying conductors in the raceway. The wire EGC:', c: ['Does not have to be increased', 'Must be increased proportionally', 'Must be doubled', 'Must go up one size'], w: '250.122(D) applies to increases for any reason other than 310.15(B) or 310.15(C).', r: '250.122(D)' },
+    { l: 'egc', q: 'A receptacle on a surface-mounted metal box may use direct metal-to-metal yoke contact for grounding if:', c: ['At least one insulating washer is removed so the yoke contacts the box', 'The box is painted', 'The cover is plastic', 'Never'], w: '250.146(A)(1).', r: '250.146' },
+    { t: 'find', l: 'egc', q: 'Where are the rules for bonding metal water piping, gas piping, and building steel?', c: ['250.104', '250.92', '250.66', '250.122'], w: '250.104.', r: '250.104' },
+    { t: 'find', l: 'egc', q: 'Where are the grounding rules for separately derived systems (transformers)?', c: ['250.30', '250.32', '250.24', '250.36'], w: '250.30.', r: '250.30' },
+    { t: 'find', l: 'egc', q: 'Where is the table for sizing main bonding jumpers and supply-side bonding jumpers?', c: ['Table 250.102(C)(1)', 'Table 250.122', 'Table 250.66', 'Table 310.16'], w: 'Table 250.102(C)(1).', r: 'Table 250.102(C)(1)' }
   ]
 });

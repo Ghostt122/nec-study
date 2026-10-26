@@ -26,7 +26,7 @@
 <p>[[300.13]] is the general "securing and supporting" section for all wiring methods. In the 2026 code it's 300.13; older books had this at 300.11.</p>
 <ul>
 <li><b>Everything gets fastened</b>: raceways, cables, boxes, cabinets, and fittings shall be securely fastened in place ([[300.13(A)]]).</li>
-<li><b>Not from the ceiling grid</b>: wiring above a drop ceiling can't be supported by the ceiling grid or the ceiling's support wires. You can add <b>independent support wires</b> if they're separate from the ceiling wires, marked by color or tag, tied off at both ends, and give secure support ([[300.13(B)]]).</li>
+<li><b>Not from the ceiling grid</b>: wiring above a drop ceiling can't be supported by the ceiling grid or the ceiling's support wires. You can add <b>independent support wires</b> if they're in addition to the ceiling wires, distinguishable by color, tagging, or other means, secured at both ends, and give secure support ([[300.13(B)]]). Two exceptions: wiring tested as part of a fire-rated ceiling assembly, and branch-circuit wiring and equipment installed per the ceiling system manufacturer's instructions.</li>
 <li><b>Don't hang stuff on pipe</b>: a raceway can't be used to support other raceways, cables, or non-electrical stuff, except: it's identified as a means of support, it carries Class 2/3 control cables for the same equipment, it supports boxes per 314.23 or luminaires per 410.36(E), or it carries a bonding jumper for its own circuit ([[300.13(C)]]).</li>
 <li><b>Don't hang stuff on cable</b>: cables can't support other cables, raceways, or anything else ([[300.13(D)]]).</li>
 <li><b>Cable ties</b> used for support must be <b>listed and identified for securement and support</b> ([[300.13(E)]]). The cheap ties in your pouch might not be.</li>
@@ -37,8 +37,18 @@
 <li><b>No welding</b>: metal raceways can't be supported, terminated, or connected by welding to the raceway ([[300.20(B)]]).</li>
 <li><b>Mechanically continuous</b>: raceways and cable armor must be continuous between boxes and secured to boxes and fittings ([[300.14]]).</li>
 <li><b>Electrically continuous</b>: metal raceways must be bonded together into a continuous ground-fault path ([[300.12]]). Loose fittings break this.</li>
-<li><b>Wire in tall vertical raceways</b> needs support at the top. [[Table 300.21(A)]] gives the max vertical distance by wire size (for example, 18 through 8 AWG copper: 100 ft).</li>
+<li><b>Wire in tall vertical raceways</b> needs at least one support at the top (or as close to the top as practical), plus intermediate supports so no length exceeds [[Table 300.21(A)]] ([[300.21]]). Common methods: insulating wedge clamps in the end of the raceway, or boxes with insulating supports at the required intervals.</li>
 </ul>
+<div class="tablewrap"><table>
+<tr><th>Copper conductor size</th><th>Max vertical distance between supports</th></tr>
+<tr><td>18 AWG through 8 AWG</td><td>100 ft</td></tr>
+<tr><td>6 AWG through 1/0 AWG</td><td>100 ft</td></tr>
+<tr><td>2/0 through 4/0 AWG</td><td>80 ft</td></tr>
+<tr><td>Over 4/0 through 350 kcmil</td><td>60 ft</td></tr>
+<tr><td>Over 350 through 500 kcmil</td><td>50 ft</td></tr>
+<tr><td>Over 500 through 750 kcmil</td><td>40 ft</td></tr>
+<tr><td>Over 750 kcmil</td><td>35 ft</td></tr>
+</table></div>
 <div class="warn"><b>Common inspection fail</b>Pipe or MC zip-tied to the sprinkler pipe, ductwork, or ceiling wires. Get your own support: all-thread, a beam clamp, or an independent wire.</div>`
     },
     {
@@ -66,6 +76,8 @@
 <tr><td>3 and larger</td><td>20 ft</td></tr></table></div>
 <ul>
 <li><b>Exposed vertical risers</b> from industrial machinery or fixed equipment: up to <b>20 ft</b> between supports, if threaded couplings are used, it's fastened at the top and bottom, and no other intermediate support is readily available.</li>
+<li>Horizontal runs through openings in framing members at no more than <b>10 ft</b> count as supported, if fastened within 3 ft of terminations ([[344.30(B)]], [[342.30(B)]]).</li>
+<li>Exception for RMC/IMC/EMT: unbroken lengths (no coupling) can be <b>fished</b> in finished buildings where securing is impracticable.</li>
 </ul>
 <div class="tip"><b>EMT vs. rigid</b>Both are "3 and 10." Only rigid/IMC gets the longer table spacing and the 20 ft riser rule, because threaded joints are stronger. EMT never gets the table.</div>`
     },
@@ -82,6 +94,8 @@
 <tr><td>½ – 1</td><td>3 ft</td></tr><tr><td>1¼ – 2</td><td>5 ft</td></tr>
 <tr><td>2½ – 3</td><td>6 ft</td></tr><tr><td>3½ – 5</td><td>7 ft</td></tr><tr><td>6</td><td>8 ft</td></tr></table></div>
 <ul>
+<li>PVC listed for other securing or support spacing may be installed per its listing ([[352.30]]).</li>
+<li>Horizontal runs through holes in framing count as supported if the holes are no farther apart than the table spacing and the pipe is fastened within 3 ft of terminations ([[352.30(B)]]).</li>
 <li>PVC must be fastened so it <b>can move</b> with thermal expansion and contraction. Straps hold it in line but let it slide.</li>
 <li><b>Expansion fittings</b> are required where the length change in a straight run between fixed points is expected to be <b>¼ in. or more</b>, using [[Table 352.44]] ([[352.44]]). Long outdoor runs in Texas sun grow a lot.</li>
 <li>Joints: made by an approved method (PVC cement) ([[352.48]]). Cut ends trimmed inside and out ([[352.28]]).</li>
@@ -136,9 +150,20 @@
 <li>Secured every <b>4½ ft</b> and within <b>12 in.</b> of every cable entry into a box.</li>
 <li>The cable length between the box entry and the closest support can't exceed <b>18 in.</b></li>
 <li>Flat cables are not stapled on edge.</li>
+<li>Where NM is protected from damage by a raceway, it doesn't have to be secured inside the raceway.</li>
+<li>Unsupported allowed: fished; or up to <b>4½ ft</b> from the last support to a luminaire or equipment in an accessible ceiling, but only in one-, two-, or multifamily dwellings.</li>
 </ul>
 <h3>Tray cable (TC) [[336.30]]</h3>
 <ul><li>Supported and secured by listed cable ties, listed straps/hangers/cleats, or other approved means that won't damage the cable.</li></ul>
+<h3>MI cable [[332.30]]</h3>
+<ul><li>Supported and secured at intervals not exceeding <b>6 ft</b>.</li></ul>
+<h3>Wireways, gutters, and cable tray</h3>
+<ul>
+<li><b>Metal wireway</b>: horizontal at each end and every 5 ft (or each end/joint for sections longer than 5 ft, never more than 10 ft apart). Vertical every 15 ft, with no more than one joint between supports ([[376.30]]).</li>
+<li><b>Sheet metal auxiliary gutters</b>: supported and secured every 5 ft along the whole length ([[366.30]]).</li>
+<li><b>Cable tray</b>: supported at intervals per the <b>installation instructions</b>. Cables in other than horizontal runs are fastened to the tray's cross members ([[392.30]]).</li>
+<li>In industrial facilities with qualified maintenance, a cable tray system designed for the load may support raceways, cables, boxes, and conduit bodies. A raceway ending at the tray is fastened with a listed tray clamp or adapter ([[392.18]]).</li>
+</ul>
 <div class="test"><b>Easy mix-up</b>MC = 6 ft. AC and NM = 4½ ft. All three: 12 in. from boxes (for MC, only small cables).</div>`
     },
     {
@@ -151,7 +176,10 @@
 <li><b>Suspended ceilings</b>: boxes 100 in³ or less can be fastened to the ceiling <b>framing members</b> (with clips identified for it) or to <b>support wires</b> per 300.13(B) that are taut and fastened at both ends ([[314.23(D)]]).</li>
 <li><b>Raceway-supported boxes, no devices</b> (junction boxes only): 100 in³ or less, threaded entries or hubs, and <b>two or more conduits</b> threaded wrenchtight. Each conduit secured within <b>3 ft</b>, or within <b>18 in.</b> if all entries are on the same side ([[314.23(E)]]).</li>
 <li><b>Raceway-supported boxes with devices or luminaires</b>: same, but each conduit secured within <b>18 in.</b> ([[314.23(F)]]).</li>
-<li>EMT can't support a box by itself except for the small items listed in the 314.23(E) exception (a conduit body no bigger than the pipe, or an FS/FD single gang box).</li>
+<li>A <b>single</b> raceway (IMC, RMC, PVC, RTRC, or EMT) can support only the small items in the 314.23(E) exception: a conduit body no bigger than the largest conduit, an FS or FD single-gang box, or an explosionproof box.</li>
+<li><b>Luminaire on a pipe</b>: an unbroken length of RMC or IMC can support a luminaire box only if it's fastened within 3 ft of the box, the luminaire is at least 8 ft above grade or standing area (where unqualified people can reach), it's threaded wrenchtight, and the weight on any single conduit is no more than 20 lb, plus the other conditions in [[314.23(F)]] Exception No. 2.</li>
+<li><b>Pendant boxes on conduit stems</b>: RMC or IMC stems. Stems longer than <b>18 in.</b> connect to the wiring system with listed swivel hangers ([[314.23(H)]]).</li>
+<li>Boxes embedded in concrete or masonry must be identified as suitably protected from corrosion and securely embedded ([[314.23(G)]]).</li>
 </ul>
 <div class="job"><b>On the job</b>A 4" square box hung in the middle of a pipe run with nothing holding the box is not OK. Support the box itself (a box hanger, strut, or rod) unless it meets 314.23(E) or (F).</div>`
     },
@@ -171,6 +199,9 @@
 <tr><td>AC</td><td>12 in.</td><td>4½ ft</td><td>[[320.30]]</td></tr>
 <tr><td>MC</td><td>12 in. (≤4 cond., ≤10 AWG)</td><td>6 ft</td><td>[[330.30]]</td></tr>
 <tr><td>NM</td><td>12 in.</td><td>4½ ft</td><td>[[334.30]]</td></tr>
+<tr><td>MI</td><td>-</td><td>6 ft</td><td>[[332.30]]</td></tr>
+<tr><td>Metal wireway</td><td>each end</td><td>5 ft (10 ft max); vertical 15 ft</td><td>[[376.30]]</td></tr>
+<tr><td>Cable tray</td><td>-</td><td>per installation instructions</td><td>[[392.30]]</td></tr>
 </table></div>
 <div class="tablewrap"><table>
 <tr><th>Unsupported lengths allowed</th><th></th></tr>
@@ -227,6 +258,24 @@
     { t: 'find', l: 'cheat', q: 'Where is the rule that you can\'t support wiring from the ceiling grid?', c: ['300.13(B)', '300.11', '314.23(D)', '410.36'], w: 'In the 2026 NEC it\'s 300.13(B). (Older editions: 300.11.)', r: '300.13(B)' },
     { t: 'find', l: 'cheat', q: 'Where are the rules for supporting boxes?', c: ['314.23', '314.16', '314.28', '312.5'], w: '314.23 Supports.', r: '314.23' },
     { t: 'find', l: 'cheat', q: 'Where is the support spacing for conductors in vertical raceways?', c: ['Table 300.21(A)', 'Table 310.16', 'Table 300.7(A)', 'Table 344.30(B)'], w: '300.21 Supporting conductors in vertical raceways.', r: 'Table 300.21(A)' },
-    { t: 'find', l: 'cheat', q: 'Where are the support rules for liquidtight flexible metal conduit?', c: ['350.30', '348.30', '356.30', '360.30'], w: '348 FMC, 350 LFMC, 356 LFNC.', r: '350.30' }
+    { t: 'find', l: 'cheat', q: 'Where are the support rules for liquidtight flexible metal conduit?', c: ['350.30', '348.30', '356.30', '360.30'], w: '348 FMC, 350 LFMC, 356 LFNC.', r: '350.30' },
+    { v: 1, l: 'general', q: 'Per Table 300.21(A), 2/0 through 4/0 AWG copper conductors in a vertical raceway must be supported at intervals not greater than:', c: ['80 ft', '100 ft', '60 ft', '50 ft'], w: 'Copper: 18–8 and 6–1/0: 100 ft, 2/0–4/0: 80 ft, over 4/0–350: 60 ft, over 350–500: 50 ft, over 500–750: 40 ft, over 750: 35 ft.', r: 'Table 300.21(A)' },
+    { l: 'general', q: 'Conductors in a vertical raceway must have at least one support:', c: ['At the top of the raceway or as close to the top as practical', 'At the bottom only', 'At every coupling', 'Only at pull boxes'], w: '300.21(A).', r: '300.21' },
+    { l: 'general', q: 'Branch-circuit wiring may be supported by a suspended ceiling system when:', c: ['Installed in accordance with the ceiling system manufacturer\'s instructions', 'Never', 'The wiring is MC cable', 'The circuit is 20 A or less'], w: '300.13(B) Exception No. 2.', r: '300.13(B)' },
+    { l: 'emt', q: 'Horizontal RMC through openings in framing members counts as supported if the openings are no more than ___ apart and the conduit is fastened within 3 ft of terminations.', c: ['10 ft', '6 ft', '4½ ft', '3 ft'], w: '344.30(B)(4): 3 m (10 ft).', r: '344.30(B)' },
+    { v: 1, l: 'pvc', q: 'Per Table 352.30(B), 3-inch PVC must be supported at least every:', c: ['6 ft', '5 ft', '7 ft', '8 ft'], w: '2½–3 inch: 1.8 m (6 ft).', r: 'Table 352.30(B)' },
+    { v: 1, l: 'pvc', q: 'Per Table 352.30(B), 6-inch PVC must be supported at least every:', c: ['8 ft', '7 ft', '6 ft', '10 ft'], w: '6 inch: 2.5 m (8 ft).', r: 'Table 352.30(B)' },
+    { l: 'pvc', q: 'Horizontal PVC through holes in framing counts as supported when:', c: ['The holes are no farther apart than Table 352.30(B) allows and the pipe is fastened within 3 ft of terminations', 'There is a strap at every stud', 'It is Schedule 80', 'Never'], w: '352.30(B).', r: '352.30(B)' },
+    { l: 'cable', q: 'MI cable must be supported and secured at intervals not exceeding:', c: ['6 ft', '4½ ft', '10 ft', '3 ft'], w: '332.30: 1.8 m (6 ft).', r: '332.30' },
+    { l: 'cable', q: 'In vertical runs, listed MC cable with ungrounded conductors 250 kcmil and larger may be secured at intervals up to:', c: ['10 ft', '6 ft', '15 ft', '20 ft'], w: '330.30(B): 3 m (10 ft).', r: '330.30(B)' },
+    { l: 'cable', q: 'NM cable run inside a raceway for protection must also be secured inside the raceway.', c: ['False', 'True', 'True if over 6 ft', 'True in metal raceway'], w: '334.30: sections protected by raceway need not be secured within the raceway.', r: '334.30' },
+    { l: 'cable', q: 'Vertical runs of metal wireway must be supported at intervals not exceeding:', c: ['15 ft', '10 ft', '5 ft', '20 ft'], w: '376.30(B): 4.5 m (15 ft), with no more than one joint between supports.', r: '376.30' },
+    { l: 'cable', q: 'Cable tray must be supported at intervals:', c: ['In accordance with the installation instructions', 'Of 10 ft', 'Of 5 ft', 'Of 20 ft'], w: '392.30(A).', r: '392.30' },
+    { l: 'boxes', q: 'A conduit stem longer than 18 in. supporting a pendant luminaire box must connect to the wiring system with:', c: ['Listed swivel hangers suitable for the location', 'A plain coupling', 'Chain', 'A set-screw connector'], w: '314.23(H)(2).', r: '314.23(H)' },
+    { l: 'boxes', q: 'An enclosure fastened to the framing or support wires of a suspended ceiling may not be larger than:', c: ['100 in³', '50 in³', '150 in³', '200 in³'], w: '314.23(D): 1650 cm³ (100 in³).', r: '314.23(D)' },
+    { l: 'boxes', q: 'With no devices or luminaires in it, which enclosure may be supported by a single EMT alone?', c: ['An FS or FD single-gang box', 'A 4 in. square junction box', 'A 100 in³ pull box', 'A luminaire box'], w: '314.23(E) Exception: a conduit body no larger than the conduit, an FS/FD single-gang box, or an explosionproof box.', r: '314.23(E)' },
+    { t: 'find', l: 'cheat', q: 'Where are the support rules for AC cable?', c: ['320.30', '330.30', '334.30', '336.30'], w: '320 AC, 330 MC, 334 NM, 336 TC.', r: '320.30' },
+    { t: 'find', l: 'cheat', q: 'Where are the support rules for rigid metal conduit?', c: ['344.30', '342.30', '358.30', '352.30'], w: '342 IMC, 344 RMC, 352 PVC, 358 EMT.', r: '344.30' },
+    { t: 'find', l: 'cheat', q: 'Where are the support rules for metal wireways?', c: ['376.30', '392.30', '366.30', '300.13'], w: '376 metal wireways. 366 is auxiliary gutters, 392 is cable tray.', r: '376.30' }
   ]
 });

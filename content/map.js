@@ -13,7 +13,7 @@ const table = rows => `<div class="tablewrap"><table><tr><th>Article</th><th>Cov
     {
       id: 'ch2', title: 'Chapter 2: Wiring and protection',
       html: table([[200, 'Grounded conductor (neutral) use and identification'], [206, 'Non-power-limited remote-control and signaling circuits'], [210, 'Branch circuits: GFCI, AFCI, required outlets'], [215, 'Feeders'], [225, 'Outside branch circuits and feeders, buildings fed from other buildings'], [230, 'Services'], [240, 'Overcurrent protection'], [242, 'Overvoltage (surge) protection'], [245, 'Overcurrent protection over 1000 V'], [250, 'Grounding and bonding'], [265, 'Branch circuits over 1000 V'], [266, 'Feeders over 1000 V'], [267, 'Outside branch circuits and feeders over 1000 V'], [268, 'Services over 1000 V'], [270, 'Grounding and bonding over 1000 V']]) +
-        `<p>2026 moved the over-1000 V material for Chapter 2 into its own articles (245, 265–270).</p>`
+        `<p>In the 2026 NEC, Chapter 2's over-1000 V rules live in their own articles (245, 265–270), so the main articles (210, 215, 225, 230, 250) are mostly about 1000 V and under.</p>`
     },
     {
       id: 'ch3', title: 'Chapter 3: Wiring methods and materials',
@@ -21,23 +21,23 @@ const table = rows => `<div class="tablewrap"><table><tr><th>Article</th><th>Cov
     },
     {
       id: 'ch4', title: 'Chapter 4: Equipment for general use',
-      html: table([[400, 'Flexible cords and cables'], [402, 'Fixture wires'], [404, 'Switches (knife, enclosed, and general)'], [406, 'Wiring devices: receptacles and, in 2026, snap switches'], [408, 'Switchboards, switchgear, and panelboards'], [409, 'Industrial control panels'], [410, 'Luminaires, lampholders, lamps'], [411, 'Low-voltage lighting'], [422, 'Appliances'], [424, 'Fixed electric space heating'], [425, 'Industrial process heating'], [426, 'Outdoor deicing and snow melting'], [427, 'Pipeline and vessel heating (heat trace)'], [430, 'Motors, motor circuits, controllers'], [440, 'Air conditioning and refrigeration'], [445, 'Generators'], [450, 'Transformers and vaults'], [455, 'Phase converters'], [460, 'Capacitors'], [470, 'Resistors and reactors'], [480, 'Stationary batteries'], [495, 'Equipment over 1000 V']])
+      html: table([[400, 'Flexible cords and cables'], [402, 'Fixture wires'], [404, 'Switches: general-use, motor-circuit, isolating, and pullout switches, breakers used as switches (wiring devices moved out)'], [406, 'Wiring devices: receptacles, attachment plugs, and (new in 2026) snap switches, dimmers, and other devices with a yoke'], [408, 'Switchboards, switchgear, and panelboards'], [409, 'Industrial control panels'], [410, 'Luminaires, lampholders, lamps'], [411, 'Low-voltage lighting'], [422, 'Appliances'], [424, 'Fixed electric space heating'], [425, 'Industrial process heating'], [426, 'Outdoor deicing and snow melting'], [427, 'Pipeline and vessel heating (heat trace)'], [430, 'Motors, motor circuits, controllers'], [440, 'Air conditioning and refrigeration'], [445, 'Generators'], [450, 'Transformers and vaults'], [455, 'Phase converters'], [460, 'Capacitors'], [470, 'Resistors and reactors'], [480, 'Stationary batteries'], [495, 'Equipment over 1000 V']])
     },
     {
-      id: 'ch5', title: 'Chapter 5: Special occupancies',
+      id: 'ch5', title: 'Chapter 5: Specific occupancies and locations',
       html: table([[500, 'Hazardous locations: classes, divisions, groups'], [501, 'Class I (gas/vapor) locations'], [502, 'Class II (dust) locations'], [503, 'Class III (fibers/flyings) locations'], [504, 'Intrinsically safe systems'], [505, 'Zone 0, 1, 2 locations'], [506, 'Zone 20, 21, 22 (dust/fibers)'], [511, 'Commercial garages, repair and storage'], [512, 'Cannabis oil equipment and systems'], [513, 'Aircraft hangars'], [514, 'Motor fuel dispensing (gas stations)'], [515, 'Bulk storage plants'], [516, 'Spray application, dipping, coating, printing'], [517, 'Health care facilities'], [518, 'Assembly occupancies (100+ people)'], [520, 'Theaters and audience areas'], [522, 'Amusement attraction control systems'], [525, 'Carnivals, circuses, fairs'], [530, 'Motion picture and TV studios'], [540, 'Motion picture projection rooms'], [545, 'Manufactured and relocatable buildings'], [547, 'Agricultural buildings'], [550, 'Mobile and manufactured homes'], [551, 'RVs and RV parks'], [552, 'Park trailers'], [555, 'Marinas, boatyards, docking facilities'], [590, 'Temporary installations']])
     },
     {
-      id: 'ch6', title: 'Chapter 6: Special equipment',
+      id: 'ch6', title: 'Chapter 6: Specific equipment',
       html: table([[600, 'Signs and outline lighting'], [604, 'Manufactured wiring systems'], [605, 'Office furnishings (cubicle wiring)'], [610, 'Cranes and hoists'], [620, 'Elevators, escalators, lifts'], [624, 'Electric self-propelled vehicle power transfer'], [625, 'EV charging (power transfer systems)'], [626, 'Electrified truck parking'], [630, 'Electric welders'], [640, 'Audio equipment'], [645, 'Information technology (IT) equipment rooms'], [646, 'Modular data centers'], [647, 'Sensitive electronic equipment'], [650, 'Pipe organs'], [660, 'X-ray equipment'], [665, 'Induction and dielectric heating'], [668, 'Electrolytic cells'], [669, 'Electroplating'], [670, 'Industrial machinery'], [675, 'Irrigation machines'], [680, 'Pools, spas, hot tubs, fountains'], [682, 'Natural and artificial bodies of water'], [685, 'Integrated electrical systems'], [690, 'Solar PV'], [691, 'Large-scale PV supply stations'], [692, 'Fuel cells'], [694, 'Wind systems'], [695, 'Fire pumps']])
     },
     {
-      id: 'ch7', title: 'Chapter 7: Special conditions',
-      html: table([[700, 'Emergency systems'], [701, 'Legally required standby'], [702, 'Optional standby'], [705, 'Interconnected power production (solar backfeed)'], [706, 'Energy storage systems (batteries)'], [708, 'Critical operations power systems (COPS)'], [710, 'Stand-alone systems'], [720, 'General requirements for limited-energy wiring'], [721, 'Power sources for limited-energy systems'], [722, 'Limited-energy cables'], [723, 'Raceways, cable routing assemblies, and trays for limited-energy'], [724, 'Class 1 power-limited circuits'], [725, 'Class 2 and Class 3 circuits'], [742, 'Overvoltage protection of limited-energy systems'], [750, 'Grounding and bonding of limited-energy systems'], [760, 'Fire alarm systems'], [772, 'Fire-resistive cable systems']])
+      id: 'ch7', title: 'Chapter 7: Specific conditions and systems',
+      html: table([[700, 'Emergency systems'], [701, 'Legally required standby'], [702, 'Optional standby'], [705, 'Interconnected power production (solar backfeed)'], [706, 'Energy storage systems (batteries)'], [708, 'Critical operations power systems (COPS)'], [710, 'Stand-alone systems'], [720, 'General requirements for limited-energy wiring'], [721, 'Power sources for limited-energy systems'], [722, 'Limited-energy cables'], [723, 'Raceways, cable routing assemblies, and trays for limited-energy'], [724, 'Class 1 power-limited circuits'], [725, 'Class 2 and Class 3 power-limited circuits'], [726, 'Class 4 fault-managed power systems'], [742, 'Overvoltage protection of limited-energy systems'], [750, 'Grounding and bonding of limited-energy systems'], [760, 'Fire alarm systems'], [772, 'Fire-resistive cable systems']])
     },
     {
       id: 'ch8', title: 'Chapter 8 and 9, and the annexes',
-      html: `<h3>Chapter 8: Communications</h3>` + table([[800, 'General requirements for communications systems'], [810, 'Radio and TV antennas'], [820, 'CATV (coax)'], [830, 'Network-powered broadband']]) + `
+      html: `<h3>Chapter 8: Communications systems (outside and entering buildings)</h3><p>In 2026, Chapters 5 through 8 may all supplement or modify Chapters 1 through 8 ([[90.3]]).</p>` + table([[800, 'General requirements for communications systems'], [810, 'Radio and TV antennas'], [820, 'CATV (coax)'], [830, 'Network-powered broadband']]) + `
 <h3>Chapter 9: Tables</h3>
 <div class="tablewrap"><table>
 <tr><td>[[Ch9 Table 1]]</td><td>Conduit fill percentages (53/31/40) and notes</td></tr>
@@ -56,10 +56,12 @@ const table = rows => `<div class="tablewrap"><table><tr><th>Article</th><th>Cov
 <tr><td>B</td><td>Application information for ampacity calculation</td></tr>
 <tr><td><b>C</b></td><td><b>Conduit fill tables for same-size conductors</b>: the fast way on the exam</td></tr>
 <tr><td><b>D</b></td><td><b>Worked calculation examples</b> (dwelling, store, motors, and more)</td></tr>
-<tr><td>F, G</td><td>Critical operations power systems; SCADA</td></tr>
+<tr><td>F, G</td><td>Critical operations power systems (availability, reliability, testing); SCADA</td></tr>
 <tr><td>H</td><td>Administration and enforcement (model for local adoption)</td></tr>
 <tr><td><b>I</b></td><td><b>Recommended tightening torque tables</b> when the equipment doesn't give a value</td></tr>
-<tr><td>K</td><td>Medical electrical equipment in dwellings</td></tr>
+<tr><td>K</td><td>Medical electrical equipment in dwellings and residential board-and-care occupancies</td></tr>
+<tr><td>L</td><td>Proposed organization of the 2029 NEC</td></tr>
+<tr><td>E, J</td><td>Reserved (empty)</td></tr>
 </table></div>`
     }
   ],
@@ -113,11 +115,11 @@ const table = rows => `<div class="tablewrap"><table><tr><th>Article</th><th>Cov
     ['Which article covers surge protective devices (overvoltage protection)?', 'Article 242', ['Article 240', 'Article 250', 'Article 285'], 'Art 242', 'ch2'],
     ['Which article covers energy management systems?', 'Article 130', ['Article 120', 'Article 750', 'Article 705'], 'Art 130', 'ch1'],
     ['Which informative annex has conduit fill tables for same-size conductors?', 'Annex C', ['Annex D', 'Annex B', 'Annex I'], 'Ch9 Table 1', 'ch8'],
-    ['Which informative annex has worked calculation examples?', 'Annex D', ['Annex C', 'Annex B', 'Annex H'], 'Ch9 Table 1', 'ch8'],
+    ['Which informative annex has worked calculation examples?', 'Annex D', ['Annex C', 'Annex B', 'Annex H'], '120.40', 'ch8'],
     ['Which informative annex has recommended tightening torque tables?', 'Annex I', ['Annex D', 'Annex C', 'Annex A'], '110.14(D)', 'ch8'],
     ['Which Chapter 9 table has conductor circular mil areas and resistance?', 'Table 8', ['Table 5', 'Table 4', 'Table 1'], 'Ch9 Table 8', 'ch8'],
     ['Which Chapter 9 table has AC resistance and reactance?', 'Table 9', ['Table 8', 'Table 10', 'Table 5'], 'Ch9 Table 9', 'ch8'],
     ['Which Chapter 9 table gives minimum conduit bend radius?', 'Table 2', ['Table 1', 'Table 4', 'Table 10'], 'Ch9 Table 2', 'ch8']
-  ].map(([q, a, wrong, r, l]) => ({ t: 'find', l, q, c: [a, ...wrong], w: `${a}. Use the Article Map to find it fast.`, r }))
+  ].map(([q, a, wrong, r, l]) => ({ v: 1, t: 'find', l, q, c: [a, ...wrong], w: `${a}. Use the Article Map to find it fast.`, r }))
 });
 })();

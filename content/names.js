@@ -82,10 +82,10 @@ ${fig(D.nm, 'NM ("Romex")', 'Nonmetallic-sheathed. Art 334')}
 <div class="tablewrap"><table>
 <tr><th>Name</th><th>Article</th><th>Notes</th></tr>
 <tr><td><b>MC</b> metal-clad cable</td><td>[[Art 330]]</td><td>Interlocked aluminum or steel armor. Common in commercial buildings for lighting and receptacle drops. Most MC has a <b>green insulated ground wire</b> inside.</td></tr>
-<tr><td><b>AC</b> armored cable ("BX")</td><td>[[Art 320]]</td><td>Looks like MC, but has a thin aluminum <b>bonding strip</b> under the armor and no insulated ground. You need a red plastic <b>anti-short bushing</b> ("redhead") at the cut ends.</td></tr>
+<tr><td><b>AC</b> armored cable ("BX")</td><td>[[Art 320]]</td><td>Looks like MC, but has a thin copper or aluminum <b>bonding strip</b> under the armor, and the armor plus strip is the ground path ([[320.108]]). You need an insulating <b>anti-short bushing</b> (the red "redhead") between the wires and the armor at every cut end ([[320.40]]). Not allowed in damp or wet locations.</td></tr>
 <tr><td><b>NM / NMC</b> ("Romex")</td><td>[[Art 334]]</td><td>Plastic-jacketed. Mostly houses and apartments. Jacket color tells the size: white 14, yellow 12, orange 10.</td></tr>
 <tr><td><b>UF</b> underground feeder</td><td>[[Art 340]]</td><td>Like NM, but solid gray and rated for direct burial.</td></tr>
-<tr><td><b>SE / USE / SER</b> service-entrance cable</td><td>[[Art 338]]</td><td>Big gray cable for services and feeders. "SER" has a neutral plus insulated conductors.</td></tr>
+<tr><td><b>SE / USE / SER</b> service-entrance cable</td><td>[[Art 338]]</td><td>Big gray cable for services and feeders. "SER" is the round style with individually insulated conductors. USE is the underground type.</td></tr>
 <tr><td><b>TC</b> tray cable</td><td>[[Art 336]]</td><td>Industrial control and power cable for cable trays.</td></tr>
 <tr><td><b>MI</b> mineral-insulated cable</td><td>[[Art 332]]</td><td>Copper tube packed with mineral insulation. Fire-rated circuits.</td></tr>
 </table></div>
@@ -110,12 +110,12 @@ ${fig(D.sweep, 'Elbow / sweep', 'Factory 90° bend')}
 <li><b>Connector</b>: goes on the end of the pipe and into a box knockout (KO). A <b>locknut</b> holds it on the inside of the box.</li>
 <li><b>Coupling</b>: joins two pieces of pipe. Rigid uses threaded couplings, EMT uses set-screw or compression, PVC is glued.</li>
 <li><b>Set-screw vs. compression (EMT)</b>: set-screw is fine dry. In <b>wet locations use fittings listed for wet locations</b> (compression "raintight"), and in concrete use <b>concrete-tight</b> fittings ([[358.42]]).</li>
-<li><b>Bushing</b>: a smooth plastic ring on the end of threaded pipe in a box, so wire doesn't get cut. Required on conductors 4 AWG and larger ([[300.6(G)]]).</li>
+<li><b>Bushing</b>: a smooth ring on the end of threaded pipe inside a box, so wire doesn't get cut. Rigid and IMC need one wherever the pipe enters a box, unless the box or fitting is designed to protect the wire ([[344.46]]). With <b>4 AWG and larger</b>, the protection must be a smoothly rounded insulating surface or one of the other methods in [[300.6(G)]]. An all-plastic bushing can't be what holds the pipe to the box; that's the locknut's job.</li>
 <li><b>Grounding/bonding bushing</b>: a bushing with a lug, used to bond a pipe where the locknut alone isn't enough (services, concentric KOs).</li>
 <li><b>Reducing washers</b>: make a big KO fit a smaller connector.</li>
 <li><b>Erickson</b> (3-piece coupling): joins two rigid pipes when neither can be turned.</li>
 <li><b>Chase nipple</b>: short threaded nipple for connecting two boxes close together.</li>
-<li><b>Nipple</b>: a short piece of threaded pipe, 24 in. or less (that length matters for conduit fill rules later).</li>
+<li><b>Nipple</b>: a short piece of pipe, usually threaded on both ends. A nipple <b>24 in. or shorter</b> between boxes can be filled to 60% (Chapter 9, Note 4).</li>
 <li><b>PVC terminal adapter / female adapter</b>: glues onto PVC so it can screw into a box with a locknut.</li>
 </ul>
 <div class="job"><b>On the job</b>"Raintight" (compression) fittings outside, set-screw inside. Ream every cut end ([[358.28(A)]]), and make every set screw tight. Loose EMT fittings break the ground path.</div>`
@@ -142,7 +142,8 @@ ${fig(D.tee, 'T', 'Three openings')}
 <tr><td><b>Cabinet / can / enclosure</b></td><td>Bigger enclosures with doors or covers (Art 312).</td></tr>
 </table></div>
 <p>Boxes are covered in [[Art 314]]. Supporting boxes: [[314.23]]. How many wires fit (box fill): [[314.16]].</p>
-<div class="tip"><b>Conduit body trick</b>Hold it with the pipe going up into the hub. If the cover faces you, it's an LB (back). If the opening points left, LL; right, LR. In practice, an LB is "the one that turns a corner through the wall."</div>`
+<div class="tip"><b>Conduit body trick</b>Hold it upright like a capital L, with the end hub pointing up and the straight side facing you. The side the cover (and the side opening) is on gives the letter: on the back = LB, on the left = LL, on the right = LR. In practice, an LB is "the one that turns a corner through the wall."</div>
+<p>Conduit bodies with 6 AWG or smaller must have at least twice the cross-section of the largest conduit attached, and can only hold splices if they're marked with their volume ([[314.16(C)]]). Every conduit body gets a cover ([[314.25]]).</p>`
     },
     {
       id: 'supports', title: 'Supports and hardware',
@@ -212,6 +213,8 @@ ${fig(D.ko, 'Knockout punch', 'Makes holes in boxes')}
     { l: 'cables', q: 'Which cable is commonly used in industrial cable trays?', c: ['TC (tray cable)', 'NM', 'UF', 'AC'], w: 'Type TC, Article 336.', r: 'Art 336' },
     { l: 'fittings', q: 'For EMT in a wet location, couplings and connectors must be:', c: ['Listed for wet locations', 'Set-screw type', 'Concrete-tight only', 'Any EMT fitting'], w: 'Wet location = fittings listed for wet locations (compression/raintight).', r: '358.42' },
     { l: 'fittings', q: 'For EMT buried in concrete, couplings and connectors must be:', c: ['Concrete-tight type', 'Raintight type', 'Set-screw type only', 'Threaded'], w: 'Buried in masonry or concrete = concrete-tight.', r: '358.42' },
+    { l: 'fittings', q: 'Where rigid conduit enters a box, a bushing is required unless:', c: ['The box or fitting is designed to protect the wire', 'The wire is smaller than 4 AWG', 'The box is outdoors', 'Two locknuts are used'], w: '344.46. For 4 AWG and larger, see also 300.6(G).', r: '344.46' },
+    { l: 'cables', q: 'In AC cable (BX), the fault-current path is provided by:', c: ['The armor together with the internal bonding strip', 'A green insulated wire inside', 'The neutral', 'The building steel'], w: '320.100 and 320.108: armor with an internal copper or aluminum bonding strip.', r: '320.108' },
     { l: 'fittings', q: 'What holds a connector in a box knockout on the inside?', c: ['A locknut', 'A bushing', 'A set screw', 'A strap'], w: 'The locknut threads onto the connector inside the box.' },
     { l: 'fittings', q: 'Where conductors 4 AWG or larger enter a box from a raceway, the conductors must be protected by:', c: ['An identified fitting providing a smoothly rounded insulating surface (like a bushing)', 'Nothing extra', 'Tape on the end of the pipe', 'A locknut only'], w: 'Conductors 4 AWG and larger need an insulating bushing or equivalent.', r: '300.6(G)' },
     { l: 'fittings', q: 'A three-piece coupling used to join two rigid conduits when neither can be turned is an:', c: ['Erickson', 'Chase nipple', 'Myers hub', 'Expansion fitting'], w: 'An Erickson (three-piece union) joins rigid where you can\'t spin either pipe.' },

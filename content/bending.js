@@ -21,7 +21,9 @@
 <li>Mark with a pencil or marker all the way around the pipe so you can see it from any side.</li>
 <li>Check 90s with a level on both legs.</li>
 </ul>
-<div class="warn"><b>Code limits</b>Bends can't damage the pipe or reduce its inside diameter (no kinks or flattened spots), and the radius must be at least what's in [[Ch9 Table 2]] ([[358.24(A)]]). Total bends between pull points: <b>360° max</b> ([[358.24(B)]], [[300.24]]). That's four 90s.</div>`
+<div class="warn"><b>Code limits</b>Bends can't damage the pipe or reduce its inside diameter (no kinks or flattened spots), and the radius must be at least what's in [[Ch9 Table 2]] ([[358.24(A)]]). Total bends between pull points: <b>360° max</b> ([[358.24(B)]]), and new in 2026, [[300.24]] applies the same 360° limit to a run that mixes conduit and tubing types. That's four 90s, and offsets and saddles count too (a 30° offset = 60°, a 3-point saddle = 90°).</div>
+<p>[[Ch9 Table 2]] minimum radius (one-shot and full-shoe benders) to the centerline of the pipe: ½" = <b>4"</b>, ¾" = <b>4½"</b>, 1" = <b>5¾"</b>, 1¼" = <b>7¼"</b>. Factory hand benders are made to meet this. PVC field bends must be made only with <b>identified bending equipment</b> (such as a PVC heater box or heat blanket made for the job) ([[352.24(A)]]).</p>
+<div class="tip"><b>NEC vs. trade</b>Only the radius, the no-damage rule, and the 360° limit are NEC rules. Take-ups, multipliers, shrink, and bender marks below are standard trade practice; check the numbers stamped on your own bender.</div>`
     },
     {
       id: 'ninety', title: '90° stub-ups and back-to-backs',
@@ -59,7 +61,7 @@
 <li>Bend the first mark at the arrow to your angle. Slide to the second mark, <b>roll the pipe 180°</b>, and bend the same angle.</li>
 </ol>
 <div class="tip"><b>Why 30°?</b>The multiplier is 2, so the math is easy, and it pulls easily. Smaller angles (10°, 22½°) make gentle offsets that pull easier but take more room.</div>
-<div class="test"><b>The math behind it</b>The multiplier is the cosecant of the angle (1 ÷ sin θ). Shrink per inch is roughly the tangent of half the angle. You don't need trig on the job; just remember the table.</div>`
+<div class="test"><b>The math behind it</b>The multiplier is the cosecant of the angle (1 ÷ sin θ). Shrink per inch is cosecant minus cotangent, which equals the tangent of half the angle; the table rounds it to the nearest 16th. You don't need trig on the job; just remember the table.</div>`
     },
     {
       id: 'saddle', title: 'Saddles',
@@ -92,10 +94,10 @@
     }
   ],
   questions: [
-    { l: 'bender', q: 'Maximum total degrees of bends between pull points in a conduit run:', c: ['360°', '270°', '180°', '450°'], w: 'Four 90s. After that you need a pull point (box or conduit body).', r: '300.24' },
-    { l: 'bender', q: 'The minimum radius of field bends in EMT is found in:', c: ['Chapter 9, Table 2', 'Table 344.30(B)', 'Table 300.19(B)', 'Chapter 9, Table 4'], w: '358.24(A) sends you to Chapter 9 Table 2 for one-shot and full-shoe benders.', r: 'Ch9 Table 2' },
+    { v: 1, l: 'bender', q: 'Maximum total degrees of bends between pull points in a conduit run:', c: ['360°', '270°', '180°', '450°'], w: 'Four 90s. After that you need a pull point (box or conduit body).', r: '300.24' },
+    { v: 1, l: 'bender', q: 'The minimum radius of field bends in EMT is found in:', c: ['Chapter 9, Table 2', 'Table 344.30(B)', 'Table 300.19(B)', 'Chapter 9, Table 4'], w: '358.24(A) sends you to Chapter 9 Table 2 for one-shot and full-shoe benders.', r: 'Ch9 Table 2' },
     { l: 'bender', q: 'A bend that twists out of plane so the pipe doesn\'t lie flat is called a:', c: ['Dog-leg', 'Kick', 'Saddle', 'Gain'], w: 'Dog-legs happen when the pipe rotates between bends.' },
-    { l: 'bender', q: 'Bends in EMT must be made so the pipe isn\'t damaged and its ___ isn\'t effectively reduced.', c: ['Internal diameter', 'Length', 'Weight', 'Wall thickness rating'], w: 'No kinks or flattening.', r: '358.24(A)' },
+    { v: 1, l: 'bender', q: 'Bends in EMT must be made so the pipe isn\'t damaged and its ___ isn\'t effectively reduced.', c: ['Internal diameter', 'Length', 'Weight', 'Wall thickness rating'], w: 'No kinks or flattening.', r: '358.24(A)' },
     { l: 'ninety', q: 'Typical take-up (deduct) for a ½" EMT hand bender:', c: ['5"', '6"', '8"', '11"'], w: '½" = 5", ¾" = 6", 1" = 8", 1¼" = 11". Check your bender.' },
     { l: 'ninety', q: 'Typical take-up (deduct) for a ¾" EMT hand bender:', c: ['6"', '5"', '8"', '4"'], w: '¾" EMT: 6".' },
     { l: 'ninety', q: 'You need a 14" stub with ¾" EMT (6" take-up). Where is your mark?', c: ['8"', '20"', '14"', '9"'], w: '14 − 6 = 8". Arrow on the mark.' },
@@ -113,6 +115,12 @@
     { l: 'saddle', q: 'Shrink for a 3-point saddle (45° center) is about ___ per inch of height.', c: ['3/16"', '1/4"', '1/16"', '1/2"'], w: '3/16" per inch of saddle height.' },
     { l: 'saddle', q: 'A 4-point saddle is basically:', c: ['Two offsets', 'Three 90s', 'A kick and a 90', 'A rolling offset'], w: 'Up-and-over offset, then a down offset.' },
     { l: 'kick', q: 'Rise 8", roll 6". What is the true offset?', c: ['10"', '14"', '12"', '7"'], w: '√(8² + 6²) = √100 = 10".' },
-    { l: 'kick', q: 'Rise 12", roll 5". What is the true offset?', c: ['13"', '17"', '14½"', '11"'], w: '√(144 + 25) = √169 = 13".' }
+    { l: 'kick', q: 'Rise 12", roll 5". What is the true offset?', c: ['13"', '17"', '14½"', '11"'], w: '√(144 + 25) = √169 = 13".' },
+    { v: 1, l: 'bender', q: 'Minimum bend radius (to centerline) for ½" conduit with a one-shot bender, per Chapter 9 Table 2:', c: ['4"', '5"', '6"', '3"'], w: 'Ch9 Table 2: ½" = 4", ¾" = 4½", 1" = 5¾" for one-shot and full-shoe benders.', r: 'Ch9 Table 2' },
+    { v: 1, l: 'bender', q: 'Field bends in PVC conduit must be made:', c: ['Only with identified bending equipment', 'With any heat source', 'Cold, without heat', 'Only at the factory'], w: '352.24(A).', r: '352.24(A)' },
+    { v: 1, l: 'bender', q: 'A single run mixes EMT, a section of rigid, and a piece of flex. The bends between pull points may total:', c: ['360° for the whole run', '360° for each wiring method', '540°', 'No limit'], w: '300.24 (2026): the 360° limit applies to any combination of conduit or tubing in a single run.', r: '300.24' },
+    { l: 'offset', q: 'A 10" offset using 45° bends. Distance between marks?', c: ['14"', '20"', '12"', '26"'], w: '10 × 1.4 = 14".' },
+    { l: 'offset', q: 'A 4" offset using 45° bends. How much shrink?', c: ['1½"', '1"', '¾"', '2"'], w: '4 × 3/8" = 1½".' },
+    { l: 'saddle', q: 'How many degrees does a 3-point saddle (45° center, two 22½° outer bends) add toward the 360° limit?', c: ['90°', '45°', '67½°', '180°'], w: '45 + (2 × 22½) = 90°. Offsets and saddles count toward the 360° limit.', r: '358.24(B)' }
   ]
 });

@@ -14,14 +14,14 @@
 <tr><td>Chapter 2 (200–270)</td><td>Wiring and protection: branch circuits, feeders, services, overcurrent, grounding &amp; bonding (250)</td></tr>
 <tr><td>Chapter 3 (300–399)</td><td>Wiring methods and materials: conduit, cable, boxes, conductors. <b>Your daily life running pipe.</b></td></tr>
 <tr><td>Chapter 4 (400–495)</td><td>Equipment for general use: cords, switches, receptacles, panelboards, lights, motors, transformers</td></tr>
-<tr><td>Chapter 5 (500–590)</td><td>Special occupancies: hazardous locations, hospitals, gas stations, temporary power</td></tr>
-<tr><td>Chapter 6 (600–695)</td><td>Special equipment: signs, EV chargers, welders, pools, solar (690), fire pumps</td></tr>
-<tr><td>Chapter 7 (700–770)</td><td>Special conditions: emergency systems, standby, Class 2 low-voltage, fire alarm</td></tr>
-<tr><td>Chapter 8 (800–840)</td><td>Communications: phone, antennas, CATV, broadband</td></tr>
+<tr><td>Chapter 5 (500–590)</td><td>Specific occupancies and locations: hazardous locations, hospitals, gas stations, temporary power</td></tr>
+<tr><td>Chapter 6 (600–695)</td><td>Specific equipment: signs, EV chargers, welders, pools, solar (690), fire pumps</td></tr>
+<tr><td>Chapter 7 (700–772)</td><td>Specific conditions and systems: emergency systems, standby, energy storage, Class 1/2/3/4 limited-energy circuits, fire alarm</td></tr>
+<tr><td>Chapter 8 (800–830)</td><td>Communications systems outside and entering buildings: phone, antennas, CATV, broadband</td></tr>
 <tr><td>Chapter 9</td><td>Tables: conduit fill, conductor properties, conduit dimensions</td></tr>
 <tr><td>Informative Annexes</td><td>Helpful extras (like conduit fill tables in Annex C) but <b>not</b> rules</td></tr>
 </table></div>
-<p>Read [[90.3]]. It says Chapters 1–4 apply everywhere, and Chapters 5–8 can <b>add to or change</b> those general rules for special situations. Chapter 9 tables apply only where a rule sends you to them.</p>
+<p>Read [[90.3]]. It says Chapters 1–4 apply generally, and Chapters 5–8 may <b>supplement or modify</b> the requirements in Chapters 1 through 8 for specific situations. Chapter 9 tables apply only where a rule references them, and the Informative Annexes (A through L) are not requirements.</p>
 <h3>How a number reads</h3>
 <p><b>358.30(A)(2)</b> means Chapter 3 → Article 358 (EMT) → Section 358.30 (Securing and Supporting) → subsection (A) → list item (2).</p>
 <h3>The secret pattern in Chapter 3</h3>
@@ -34,7 +34,7 @@
 <tr><td>.20</td><td>Size (min/max)</td><td>[[358.20]]</td></tr>
 <tr><td>.22</td><td>Number of Conductors</td><td>[[358.22]]</td></tr>
 <tr><td>.24</td><td>Bends</td><td>[[358.24]]</td></tr>
-<tr><td>.28</td><td>Reaming / Trimming</td><td>[[358.28]]</td></tr>
+<tr><td>.28</td><td>Reaming and threading (trimming for flex)</td><td>[[358.28]]</td></tr>
 <tr><td>.30</td><td><b>Securing and Supporting</b></td><td>[[358.30]]</td></tr>
 <tr><td>.42</td><td>Couplings and Connectors</td><td>[[358.42]]</td></tr>
 <tr><td>.60</td><td>Grounding</td><td>[[358.60]]</td></tr>
@@ -74,12 +74,13 @@
 <tr><td>Labeled</td><td>Has the testing lab's label or mark on it</td></tr>
 <tr><td>Identified (for a use)</td><td>Recognized as suitable for that specific use, usually through listing or labeling</td></tr>
 <tr><td>Raceway</td><td>An enclosed channel made to hold wires: conduit, tubing, wireway, surface raceway. <b>Cable is not a raceway.</b></td></tr>
-<tr><td>Conduit body</td><td>A fitting with a removable cover for access, like an LB, LL, LR, T, C, or X ("condulets")</td></tr>
+<tr><td>Conduit body</td><td>A part of the conduit system with a removable cover for access, like an LB, LL, LR, T, C, or X ("condulets"). FS and FD boxes are <b>not</b> conduit bodies.</td></tr>
 <tr><td>Fitting</td><td>Locknut, bushing, connector, coupling. Mainly mechanical, not electrical.</td></tr>
 <tr><td>Exposed (wiring methods)</td><td>On or attached to a surface, or behind panels designed to allow access</td></tr>
 <tr><td>Concealed</td><td>Hidden by the structure or finish of the building (inside walls, above hard lids)</td></tr>
-<tr><td>Accessible (equipment)</td><td>You can get to it without removing or damaging the building finish</td></tr>
-<tr><td>Readily accessible</td><td>You can reach it quickly without tools, ladders, or climbing over things</td></tr>
+<tr><td>Accessible (equipment)</td><td>Can be reached to operate, replace, or inspect it</td></tr>
+<tr><td>Accessible (wiring methods)</td><td>Can be removed or exposed without damaging the building structure or finish (not permanently closed in)</td></tr>
+<tr><td>Readily accessible</td><td>You can reach it quickly without tools (other than keys), portable ladders, climbing over or under things, or moving obstacles</td></tr>
 <tr><td>Dry / Damp / Wet location</td><td>Damp: protected but moderate moisture (under a canopy, a basement). Wet: weather-exposed, underground, in concrete in contact with earth.</td></tr>
 <tr><td>Ampacity</td><td>How much current a conductor can carry continuously without going over its temperature rating</td></tr>
 <tr><td>Branch circuit</td><td>The wiring between the last overcurrent device (breaker) and the outlets</td></tr>
@@ -93,7 +94,7 @@
     {
       id: 'finding', title: 'Finding things fast (open-book skill)',
       html: `
-<p>On a 4-hour, 80-question exam you have about <b>3 minutes per question</b>. Most people who fail run out of time hunting through the book. Speed comes from practice.</p>
+<p>On the older 4-hour, 80-question format you had about <b>3 minutes per question</b>. Whatever the current format, the clock is tight. Most people who fail run out of time hunting through the book. Speed comes from practice.</p>
 <h3>Three ways in</h3>
 <ol>
 <li><b>Know the article.</b> Learn the article numbers for the big topics (list below). That gets you most of the way.</li>
@@ -122,7 +123,7 @@
     {
       id: 'texas', title: 'Texas path: apprentice to journeyman',
       html: `
-<p>Electricians in Texas are licensed by <b>TDLR</b> (Texas Department of Licensing and Regulation). Here's the path as TDLR lists it. Rules change, so check tdlr.texas.gov before you apply.</p>
+<p>Electricians in Texas are licensed by <b>TDLR</b> (Texas Department of Licensing and Regulation). Here's the path as TDLR's website listed it in October 2026. This part is <b>not</b> in the NEC, and fees and rules change, so <b>check tdlr.texas.gov</b> before you apply.</p>
 <h3>1. Apprentice Electrician license</h3>
 <ul>
 <li>No experience or exam needed. Apply online ($20) and renew every year.</li>
@@ -139,22 +140,23 @@
 <ul>
 <li>Mail the Journeyman application with the $30 fee. TDLR runs a background check.</li>
 <li>After approval, schedule the exam with <b>PSI</b>.</li>
-<li>The license is good for 1 year and renews online, with continuing education required.</li>
+<li>The license is good for 1 year and must be renewed every year; renewal requires continuing education (check TDLR for the current hours).</li>
 </ul>
 <h3>Which code edition?</h3>
-<p>Texas adopted the <b>2026 NEC</b> as the state electrical code, effective September 1, 2026, with one Texas change: it does not require GFCI protection for outdoor HVAC outlets at dwellings under [[210.8(F)]]. That's the same edition as your book. Cities can adopt local amendments that are stricter.</p>`
+<p>Texas adopted the <b>2026 NEC</b> as the state electrical code (16 TAC §73.100), effective September 1, 2026, with one limited Texas amendment: GFCI protection is not required for outdoor HVAC outlets at dwellings under [[210.8(F)]]. That's the same edition as your book. Cities can adopt local amendments, so check TDLR and your city.</p>`
     },
     {
       id: 'exam', title: 'The journeyman exam',
       html: `
-<p>From the PSI Candidate Information Bulletin for TDLR. Check the current bulletin when you apply.</p>
+<p>From TDLR's exam page and the PSI Candidate Information Bulletin (CIB). <b>Check TDLR:</b> the exam page says that since <b>March 11, 2025</b> the journeyman exam has <b>two separate parts, a knowledge portion and a calculations portion</b>, and that it is open book with the <b>2026 NEC</b>. The bulletin posted online in October 2026 was still the 2023-NEC edition and showed the older single-exam format below, so get the current bulletin from PSI for the new item counts and times.</p>
 <ul>
-<li><b>80 scored questions</b> plus 5 unscored ones, <b>240 minutes</b>, <b>70% to pass</b>.</li>
+<li>Older single-exam format (CIB): <b>80 scored questions</b> plus 5 unscored ones, <b>240 minutes</b> (plus 20 for the unscored ones), <b>70% to pass</b>.</li>
 <li>Open book: your own soft-bound NEC.</li>
 <li>Unless a question says otherwise, <b>all conductors are copper</b>.</li>
-<li>TDLR notes the journeyman exam has been split into an <b>NEC knowledge</b> portion and a <b>calculations</b> portion since March 2025.</li>
+<li>The CIB says <b>don't apply code exceptions or optional calculation methods</b> (like the 120.82 optional dwelling calc) unless the question tells you to.</li>
+<li>Both the knowledge and calculations portions are multiple choice; TDLR requires <b>70%</b> to pass.</li>
 </ul>
-<h3>What's on it (scored items)</h3>
+<h3>What's on it (scored items, from the CIB content outline)</h3>
 <div class="tablewrap"><table>
 <tr><th>Subject</th><th>#</th></tr>
 <tr><td>Wiring methods &amp; materials</td><td><b>18</b></td></tr>
@@ -173,40 +175,44 @@
     }
   ],
   questions: [
-    { l: 'layout', q: 'Which chapters of the NEC apply generally to all installations?', c: ['Chapters 1 through 4', 'Chapters 1 through 9', 'Chapters 5 through 8', 'Chapter 9 only'], w: 'Chapters 1–4 apply generally. Chapters 5–8 supplement or modify them for special occupancies, equipment, and conditions.', r: '90.3' },
-    { l: 'layout', q: 'Chapters 5, 6, and 7 can do what to the rules in Chapters 1–4?', c: ['Supplement or modify them', 'Nothing; they only apply to communications', 'Replace the definitions in Article 100', 'Only add tables'], w: 'Special occupancies, special equipment, and special conditions can supplement or modify the general rules.', r: '90.3' },
-    { l: 'layout', q: 'Chapter 9 of the NEC is mostly:', c: ['Tables that apply where referenced', 'Definitions', 'Hazardous locations', 'Communications systems'], w: 'Chapter 9 holds tables (conduit fill, conductor properties, etc.) used where the code references them.', r: '90.3' },
-    { l: 'layout', q: 'Are Informative Annexes enforceable requirements?', c: ['No, they are for information only', 'Yes, same as the rest of the code', 'Only Annex C', 'Only when the AHJ adopts them by name in the permit'], w: 'Informative annexes are not part of the requirements of the code.', r: '90.3' },
-    { l: 'layout', q: 'In Chapter 3 raceway articles, the section ending in ".30" covers:', c: ['Securing and supporting', 'Uses permitted', 'Bends', 'Grounding'], w: 'The numbering is parallel: .10 uses permitted, .12 not permitted, .24 bends, .30 securing & supporting, .60 grounding.', r: '358.30' },
-    { l: 'layout', q: 'In a raceway article, "Uses Not Permitted" is found in which section number?', c: ['.12', '.10', '.22', '.42'], w: 'xxx.12 is always Uses Not Permitted (e.g., 358.12 for EMT).', r: '358.12' },
+    { v: 1, l: 'layout', q: 'Which chapters of the NEC apply generally to all installations?', c: ['Chapters 1 through 4', 'Chapters 1 through 9', 'Chapters 5 through 8', 'Chapter 9 only'], w: 'Chapters 1–4 apply generally. Chapters 5–8 supplement or modify them for special occupancies, equipment, and conditions.', r: '90.3' },
+    { v: 1, l: 'layout', q: 'Chapters 5, 6, and 7 can do what to the rules in Chapters 1–4?', c: ['Supplement or modify them', 'Nothing; they only apply to communications', 'Replace the definitions in Article 100', 'Only add tables'], w: 'Special occupancies, special equipment, and special conditions can supplement or modify the general rules.', r: '90.3' },
+    { v: 1, l: 'layout', q: 'Chapter 9 of the NEC is mostly:', c: ['Tables that apply where referenced', 'Definitions', 'Hazardous locations', 'Communications systems'], w: 'Chapter 9 holds tables (conduit fill, conductor properties, etc.) used where the code references them.', r: '90.3' },
+    { v: 1, l: 'layout', q: 'Are Informative Annexes enforceable requirements?', c: ['No, they are for information only', 'Yes, same as the rest of the code', 'Only Annex C', 'Only when the AHJ adopts them by name in the permit'], w: 'Informative annexes are not part of the requirements of the code.', r: '90.3' },
+    { v: 1, l: 'layout', q: 'In Chapter 3 raceway articles, the section ending in ".30" covers:', c: ['Securing and supporting', 'Uses permitted', 'Bends', 'Grounding'], w: 'The numbering is parallel: .10 uses permitted, .12 not permitted, .24 bends, .30 securing & supporting, .60 grounding.', r: '358.30' },
+    { v: 1, l: 'layout', q: 'In a raceway article, "Uses Not Permitted" is found in which section number?', c: ['.12', '.10', '.22', '.42'], w: 'xxx.12 is always Uses Not Permitted (e.g., 358.12 for EMT).', r: '358.12' },
     { l: 'layout', q: 'What does the (A) mean in 358.30(A)?', c: ['A subsection of section 358.30', 'A reference to Annex A', 'An article in Chapter 1', 'An exception'], w: 'Article 358 → Section 358.30 → subsection (A) → list items (1), (2)…' },
-    { l: 'reading', q: 'In the NEC, "shall be permitted" means:', c: ['It is allowed but not required', 'It is required', 'It is prohibited', 'It is only a recommendation in an informational note'], w: 'Permissive rules use "shall be permitted" or "shall not be required."', r: '90.5(B)' },
-    { l: 'reading', q: 'Informational Notes in the NEC are:', c: ['Explanatory and not enforceable', 'Mandatory rules', 'Only for inspectors', 'Exceptions to the rule above them'], w: 'Informational notes are explanatory material and not enforceable requirements.', r: '90.5(C)' },
-    { l: 'reading', q: 'A mandatory rule in the NEC uses the words:', c: ['shall or shall not', 'should or may', 'is recommended', 'shall be permitted'], w: 'Mandatory rules are characterized by "shall" or "shall not."', r: '90.5(A)' },
-    { l: 'reading', q: 'Metric designator 21 is what trade size?', c: ['3/4', '1/2', '1', '1-1/4'], w: 'Designators: 16 = 1/2, 21 = 3/4, 27 = 1, 35 = 1-1/4, 41 = 1-1/2, 53 = 2.', r: 'Table 300.19(B)' },
-    { l: 'reading', q: 'Metric designator 16 is what trade size?', c: ['1/2', '3/8', '3/4', '1'], w: '16 = 1/2. The numbers are for identification only, not actual dimensions.', r: 'Table 300.19(B)' },
+    { v: 1, l: 'reading', q: 'In the NEC, "shall be permitted" means:', c: ['It is allowed but not required', 'It is required', 'It is prohibited', 'It is only a recommendation in an informational note'], w: 'Permissive rules use "shall be permitted" or "shall not be required."', r: '90.5(B)' },
+    { v: 1, l: 'reading', q: 'Informational Notes in the NEC are:', c: ['Explanatory and not enforceable', 'Mandatory rules', 'Only for inspectors', 'Exceptions to the rule above them'], w: 'Informational notes are explanatory material and not enforceable requirements.', r: '90.5(C)' },
+    { v: 1, l: 'reading', q: 'A mandatory rule in the NEC uses the words:', c: ['shall or shall not', 'should or may', 'is recommended', 'shall be permitted'], w: 'Mandatory rules are characterized by "shall" or "shall not."', r: '90.5(A)' },
+    { v: 1, l: 'reading', q: 'Metric designator 21 is what trade size?', c: ['3/4', '1/2', '1', '1-1/4'], w: 'Designators: 16 = 1/2, 21 = 3/4, 27 = 1, 35 = 1-1/4, 41 = 1-1/2, 53 = 2.', r: 'Table 300.19(B)' },
+    { v: 1, l: 'reading', q: 'Metric designator 16 is what trade size?', c: ['1/2', '3/8', '3/4', '1'], w: '16 = 1/2. The numbers are for identification only, not actual dimensions.', r: 'Table 300.19(B)' },
     { l: 'reading', q: '"Approved" in the NEC means:', c: ['Acceptable to the authority having jurisdiction', 'Listed by UL', 'Labeled by the manufacturer', 'Shown on the plans'], w: 'Approved = acceptable to the AHJ (usually the inspector). Don\'t confuse with "listed."', r: 'Art 100' },
-    { l: 'words', q: 'Equipment that appears on a list published by a testing organization (like UL) is:', c: ['Listed', 'Approved', 'Identified', 'Labeled'], w: 'Listed = included on a list by a testing lab. Labeled = has the lab\'s label attached. Approved = OK\'d by the AHJ.', r: 'Art 100' },
-    { l: 'words', q: 'Which of these is NOT a raceway?', c: ['Type MC cable', 'EMT', 'Rigid PVC conduit', 'Metal wireway'], w: 'Cable assemblies (MC, AC, NM) are cables, not raceways. A raceway is an enclosed channel that conductors are pulled into.', r: 'Art 100' },
-    { l: 'words', q: 'Capable of being reached quickly without climbing over things, using a portable ladder, or using tools is:', c: ['Readily accessible', 'Accessible', 'Exposed', 'Approved'], w: 'Readily accessible is the stricter one. It\'s needed for things like disconnects and panelboard breakers.', r: 'Art 100' },
+    { v: 1, l: 'words', q: 'Equipment that appears on a list published by a testing organization (like UL) is:', c: ['Listed', 'Approved', 'Identified', 'Labeled'], w: 'Listed = included on a list by a testing lab. Labeled = has the lab\'s label attached. Approved = OK\'d by the AHJ.', r: 'Art 100' },
+    { v: 1, l: 'words', q: 'Which of these is NOT a raceway?', c: ['Type MC cable', 'EMT', 'Rigid PVC conduit', 'Metal wireway'], w: 'Cable assemblies (MC, AC, NM) are cables, not raceways. A raceway is an enclosed channel that conductors are pulled into.', r: 'Art 100' },
+    { v: 1, l: 'words', q: 'Capable of being reached quickly without climbing over things, using a portable ladder, or using tools is:', c: ['Readily accessible', 'Accessible', 'Exposed', 'Approved'], w: 'Readily accessible is the stricter one. It\'s needed for things like disconnects and panelboard breakers.', r: 'Art 100' },
     { l: 'words', q: 'The neutral is usually which conductor?', c: ['The grounded conductor', 'The grounding electrode conductor', 'The equipment grounding conductor', 'The ungrounded conductor'], w: 'The neutral is normally the grounded conductor (white/gray). The EGC is the green or bare one.', r: 'Art 100' },
     { l: 'words', q: 'Wiring between the final overcurrent device and the outlets is a:', c: ['Branch circuit', 'Feeder', 'Service', 'Tap'], w: 'Feeder = service to final OCPD. Branch circuit = final OCPD to the outlets.', r: 'Art 100' },
-    { l: 'words', q: 'An LB is an example of a:', c: ['Conduit body', 'Junction box', 'Cabinet', 'Raceway'], w: 'Conduit bodies (LB, LL, LR, T, C, X) give access through a removable cover at a junction or termination point.', r: 'Art 100' },
-    { l: 'words', q: 'Underground and in concrete slabs in contact with the earth are classified as:', c: ['Wet locations', 'Damp locations', 'Dry locations', 'Hazardous locations'], w: 'Installations underground or in concrete slabs in direct contact with earth are wet locations.', r: 'Art 100' },
+    { v: 1, l: 'words', q: 'An LB is an example of a:', c: ['Conduit body', 'Junction box', 'Cabinet', 'Raceway'], w: 'Conduit bodies (LB, LL, LR, T, C, X) give access through a removable cover at a junction or termination point.', r: 'Art 100' },
+    { v: 1, l: 'words', q: 'Underground and in concrete slabs in contact with the earth are classified as:', c: ['Wet locations', 'Damp locations', 'Dry locations', 'Hazardous locations'], w: 'Installations underground or in concrete slabs in direct contact with earth are wet locations.', r: 'Art 100' },
     { l: 'finding', q: 'Which of these may NOT be brought into the Texas exam room?', c: ['The NEC Handbook', 'A soft-bound NEC with highlighting', 'A soft-bound NEC with publisher tabs', 'A soft-bound NEC with brief notes written before the exam'], w: 'The PSI bulletin says the NEC Handbook is not allowed, and neither are loose-leaf, spiral, or ring-bound books or homemade tabs.' },
     { l: 'finding', q: 'According to the PSI bulletin, tabs in your exam code book must be:', c: ['Permanent tabs made by the NEC book publisher', 'Any sticky tabs', 'Handwritten tabs only', 'Not allowed at all'], w: 'Homemade, DIY, or non-NEC tabs are not permitted.' },
-    { l: 'texas', q: 'How many hours of on-the-job training does Texas require for a journeyman electrician license?', c: ['8,000', '4,000', '6,000', '12,000'], w: '8,000 hours under a Texas-licensed Master Electrician. You may apply and test at 7,000 hours.' },
-    { l: 'texas', q: 'At how many hours can you apply to take the Texas journeyman exam early?', c: ['7,000', '6,000', '7,500', '8,000 (no early testing)'], w: 'TDLR lets you test at 7,000 hours. The license is issued once you reach 8,000.' },
-    { l: 'texas', q: 'Which agency licenses electricians in Texas?', c: ['TDLR', 'NFPA', 'OSHA', 'PSI'], w: 'TDLR licenses electricians. PSI is the testing vendor. NFPA publishes the NEC.' },
-    { l: 'texas', q: 'As an apprentice in Texas you may work under the general supervision of:', c: ['A Master, Journeyman, or Residential Wireman', 'Only a Master Electrician', 'Any other apprentice with more hours', 'Only the electrical contractor owner'], w: 'Per TDLR, apprentices work under the general supervision of a Master Electrician, Journeyman Electrician, or Residential Wireman.' },
-    { l: 'exam', q: 'Passing score on the Texas journeyman exam is:', c: ['70%', '75%', '80%', '65%'], w: 'Per the current PSI bulletin for TDLR: 80 scored items, 240 minutes, 70% to pass.' },
-    { l: 'exam', q: 'Unless the exam question says otherwise, conductors are assumed to be:', c: ['Copper', 'Aluminum', 'Copper-clad aluminum', 'Whatever is cheapest'], w: 'The PSI bulletin says all conductors are to be considered copper unless specifically noted.' },
-    { l: 'exam', q: 'Which subject area has the most questions on the Texas journeyman exam?', c: ['Wiring methods and materials', 'Motors and generators', 'Renewable energy', 'Feeders'], w: 'Wiring methods and materials: 18 of 80 scored items.' },
-    { t: 'find', l: 'finding', q: 'Where are the official definitions located?', c: ['Article 100', 'Article 90', 'Article 110', 'Chapter 9'], w: 'Article 100 has the definitions, in alphabetical order.', r: 'Art 100' },
-    { t: 'find', l: 'finding', q: 'Which article covers EMT?', c: ['Article 358', 'Article 344', 'Article 352', 'Article 348'], w: '344 = RMC, 348 = FMC, 352 = PVC, 358 = EMT.', r: 'Art 358' },
-    { t: 'find', l: 'finding', q: 'Which article covers grounding and bonding?', c: ['Article 250', 'Article 240', 'Article 230', 'Article 300'], w: '240 = overcurrent protection, 230 = services, 250 = grounding & bonding.', r: 'Art 250' },
-    { t: 'find', l: 'finding', q: 'Which article covers boxes and box fill?', c: ['Article 314', 'Article 312', 'Article 300', 'Article 408'], w: '312 = cabinets and cutout boxes, 314 = outlet, device, pull, and junction boxes, 408 = panelboards.', r: 'Art 314' },
-    { t: 'find', l: 'finding', q: 'Which article covers rigid metal conduit (RMC)?', c: ['Article 344', 'Article 342', 'Article 358', 'Article 350'], w: '342 = IMC, 344 = RMC.', r: 'Art 344' },
-    { t: 'find', l: 'finding', q: 'Which article covers rigid PVC conduit?', c: ['Article 352', 'Article 353', 'Article 356', 'Article 362'], w: '352 = PVC, 353 = HDPE, 356 = LFNC, 362 = ENT.', r: 'Art 352' }
+    { v: 1, l: 'texas', q: 'How many hours of on-the-job training does Texas require for a journeyman electrician license?', c: ['8,000', '4,000', '6,000', '12,000'], w: '8,000 hours under a Texas-licensed Master Electrician. You may apply and test at 7,000 hours.' },
+    { v: 1, l: 'texas', q: 'At how many hours can you apply to take the Texas journeyman exam early?', c: ['7,000', '6,000', '7,500', '8,000 (no early testing)'], w: 'TDLR lets you test at 7,000 hours. The license is issued once you reach 8,000.' },
+    { v: 1, l: 'texas', q: 'Which agency licenses electricians in Texas?', c: ['TDLR', 'NFPA', 'OSHA', 'PSI'], w: 'TDLR licenses electricians. PSI is the testing vendor. NFPA publishes the NEC.' },
+    { v: 1, l: 'texas', q: 'As an apprentice in Texas you may work under the general supervision of:', c: ['A Master, Journeyman, or Residential Wireman', 'Only a Master Electrician', 'Any other apprentice with more hours', 'Only the electrical contractor owner'], w: 'Per TDLR, apprentices work under the general supervision of a Master Electrician, Journeyman Electrician, or Residential Wireman.' },
+    { v: 1, l: 'exam', q: 'Passing score on the Texas journeyman exam is:', c: ['70%', '75%', '80%', '65%'], w: 'TDLR: 70% or better to pass (each portion). Check the current PSI bulletin for item counts and times.' },
+    { v: 1, l: 'exam', q: 'Unless the exam question says otherwise, conductors are assumed to be:', c: ['Copper', 'Aluminum', 'Copper-clad aluminum', 'Whatever is cheapest'], w: 'The PSI bulletin says all conductors are to be considered copper unless specifically noted.' },
+    { l: 'exam', q: 'Which subject area has the most questions on the Texas journeyman exam?', c: ['Wiring methods and materials', 'Motors and generators', 'Renewable energy', 'Feeders'], w: 'Wiring methods and materials: 18 of 80 scored items in the CIB content outline (check the current bulletin for the split-exam outline).' },
+    { l: 'exam', q: 'On the Texas exam, should you apply code exceptions or optional calculation methods?', c: ['Only if the question tells you to', 'Always, they give smaller answers', 'Only exceptions, never optional calcs', 'Only optional calcs, never exceptions'], w: 'PSI Candidate Information Bulletin: don\'t consider exceptions or optional calculation methods unless the question specifically directs you to.' },
+    { l: 'exam', q: 'Since March 11, 2025, TDLR says the journeyman exam is made up of:', c: ['A knowledge portion and a calculations portion', 'One 100-question exam', 'A written exam and a hands-on practical', 'An oral exam'], w: 'TDLR exam page. Check the current PSI bulletin for item counts and times.' },
+    { v: 1, l: 'layout', q: 'In the 2026 NEC, Chapters 5 through 8 may supplement or modify the requirements in:', c: ['Chapters 1 through 8', 'Chapters 1 through 4 only', 'Chapter 9 only', 'Nothing; they stand alone'], w: '90.3 (2026). Figure 90.3 shows Chapter 8 (communications) now in the same group as 5–7.', r: '90.3' },
+    { v: 1, l: 'words', q: '"Accessible" as applied to equipment means:', c: ['Capable of being reached for operation, renewal, and inspection', 'Reachable without tools or ladders', 'Not permanently closed in by the building finish', 'Behind a locked door'], w: 'Article 100. "Not closed in by the finish" is the wiring-methods meaning; "without tools or ladders" is readily accessible.', r: 'Art 100' },
+    { v: 1, t: 'find', l: 'finding', q: 'Where are the official definitions located?', c: ['Article 100', 'Article 90', 'Article 110', 'Chapter 9'], w: 'Article 100 has the definitions, in alphabetical order.', r: 'Art 100' },
+    { v: 1, t: 'find', l: 'finding', q: 'Which article covers EMT?', c: ['Article 358', 'Article 344', 'Article 352', 'Article 348'], w: '344 = RMC, 348 = FMC, 352 = PVC, 358 = EMT.', r: 'Art 358' },
+    { v: 1, t: 'find', l: 'finding', q: 'Which article covers grounding and bonding?', c: ['Article 250', 'Article 240', 'Article 230', 'Article 300'], w: '240 = overcurrent protection, 230 = services, 250 = grounding & bonding.', r: 'Art 250' },
+    { v: 1, t: 'find', l: 'finding', q: 'Which article covers boxes and box fill?', c: ['Article 314', 'Article 312', 'Article 300', 'Article 408'], w: '312 = cabinets and cutout boxes, 314 = outlet, device, pull, and junction boxes, 408 = panelboards.', r: 'Art 314' },
+    { v: 1, t: 'find', l: 'finding', q: 'Which article covers rigid metal conduit (RMC)?', c: ['Article 344', 'Article 342', 'Article 358', 'Article 350'], w: '342 = IMC, 344 = RMC.', r: 'Art 344' },
+    { v: 1, t: 'find', l: 'finding', q: 'Which article covers rigid PVC conduit?', c: ['Article 352', 'Article 353', 'Article 356', 'Article 362'], w: '352 = PVC, 353 = HDPE, 356 = LFNC, 362 = ENT.', r: 'Art 352' }
   ]
 });
