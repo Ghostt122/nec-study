@@ -81,7 +81,27 @@
 </ol>
 <div class="tip"><b>Example</b>2" pipe to cross, center 30" from the end. Center mark: 30 + (2 × 3/16) = 30⅜". Outer marks: 2 × 2.5 = 5" on each side, at 25⅜" and 35⅜".</div>
 <h3>4-point saddle</h3>
-<p>For wide obstacles (a duct or beam). It's two offsets back to back: up and over, then back down. Use the offset table for each, and space them by the width of the obstacle.</p>`
+<p>For wide obstacles (a duct or beam). It's two offsets back to back: up and over, then back down. Step by step in the next lesson.</p>`
+    },
+    {
+      id: 'saddle4', title: '4-point saddles, step by step',
+      html: `
+<p>A 4-point saddle goes <b>up and over</b> something wide (a duct, beam, or a rack of pipe) and <b>comes back down</b> to the same line. It's just <b>two offsets</b> with the same depth and angle. All four bends use the same angle. Trade method, not an NEC rule.</p>
+<p>You need three measurements: <b>D</b> = pipe end to the near edge of the obstacle, <b>H</b> = height to clear, <b>W</b> = width of the obstacle. Then from the offset table: the <b>multiplier</b> and <b>shrink per inch</b> for your angle.</p>
+<ol>
+<li><b>Shrink</b> for one offset = H × shrink per inch.</li>
+<li><b>Mark 2</b> (top of the first offset) = D + shrink.</li>
+<li><b>Mark 1</b> = Mark 2 − (H × multiplier).</li>
+<li><b>Mark 3</b> (start back down) = D + W + shrink.</li>
+<li><b>Mark 4</b> = Mark 3 + (H × multiplier).</li>
+<li>Bend Mark 1 at the arrow. Slide to Mark 2, roll 180°, bend the same angle. That's the first offset.</li>
+<li>Bend Mark 3 so the pipe heads <b>back down</b>, then slide to Mark 4, roll 180°, and bend the same angle. Sight down the pipe between bends so all four stay in the same plane.</li>
+</ol>
+<div class="tip"><b>Example</b>½" EMT, obstacle 6" high and 12" wide, near edge 40" from the end, 30° bends (multiplier 2, shrink ¼" per inch).<br>Shrink = 6 × ¼ = 1½".<br>Mark 2 = 40 + 1½ = <b>41½"</b>. Mark 1 = 41½ − 12 = <b>29½"</b>.<br>Mark 3 = 40 + 12 + 1½ = <b>53½"</b>. Mark 4 = 53½ + 12 = <b>65½"</b>.<br>The whole saddle uses up 3" of pipe (two offsets × 1½").</div>
+<ul>
+<li>Shrink table values are rounded, so the bends land within about ⅛" of the target. Leave a little clearance over the obstacle.</li>
+<li>Counting toward the 360° limit between pull points ([[358.24(B)]]): four 30° bends = <b>120°</b>. Four 45° bends = 180°. Use smaller angles when the run already has other bends.</li>
+</ul>`
     },
     {
       id: 'kick', title: 'Kicks and rolling offsets',
@@ -97,6 +117,42 @@
 </ol>
 <div class="tip"><b>Example</b>Rise 8", roll 6": true offset = √(64 + 36) = <b>10"</b>. At 30°: marks 20" apart, shrink 2½".</div>
 <p>Use the <a href="#/tools/bend">bending calculator</a> to check your marks.</p>`
+    },
+    {
+      id: 'air', title: 'Bending in the air',
+      html: `
+<p>Bending "in the air" means the bender is <b>upside down</b>: head up, handle on the floor. You hold the handle steady (foot or knee on it) and push the pipe down into the shoe by hand. Trade method, not an NEC rule.</p>
+<ul>
+<li>Good for <b>small bends</b>: kicks, box offsets, and touching up an angle.</li>
+<li>Good when the stick is <b>long</b> or already has bends that would hit the floor or a wall if you bent it the normal way.</li>
+<li>You can watch the angle the whole time and stop right on it.</li>
+<li>The marks on the shoe still work: line your pencil mark up with the arrow before you push.</li>
+<li>Smaller pipe (½" and ¾" EMT) bends this way easily. Big bends and larger pipe are easier and safer on the floor.</li>
+<li>Keep the rest of the pipe level and in line so the bend doesn't twist into a dog-leg.</li>
+</ul>`
+    },
+    {
+      id: 'speed', title: 'Speed tricks: box offsets and bending to the lines',
+      html: `
+<p>These save time once you know the basics. Trade methods, not NEC rules.</p>
+<h3>Quick box offset</h3>
+<p>A small offset right at the end of the pipe so it enters a surface-mounted box's knockout straight.</p>
+<ol>
+<li><b>Depth</b> = (wall to center of the knockout) − (wall to center of the pipe). It's usually small, about ½".</li>
+<li>Use <b>10° bends</b>. Marks = depth × 6. A ½" offset: marks <b>3" apart</b>. Shrink is only 1/16" per inch, so ignore it.</li>
+<li>Put the offset back far enough that the straight end past the second bend fits fully into the connector.</li>
+<li>Bend the first mark about 10°, roll 180°, bend the second the same amount. Many hands do both bends in the air.</li>
+</ol>
+<p>Why not 30°? A ½" offset at 30° needs marks only 1" apart, too close to make two bends with a hand bender.</p>
+<h3>Bending to the lines on the bender</h3>
+<p>Skip the protractor: the shoe has <b>degree lines</b> (10°, 22½°, 30°, 45°, 60°) on its side. When the pipe sitting in the shoe lines up with a line, you're at that angle. For a 90, the pipe straight up and down (check with a level) is the target.</p>
+<h3>More time savers</h3>
+<ul>
+<li>Do all the math and <b>mark every bend before you start</b>. Mark all the way around the pipe.</li>
+<li>For the same bend on many pipes (a row of stub-ups or box offsets), bend one, check it, then <b>use it as a pattern</b> to mark the rest.</li>
+<li>Keep the offset table in your head: 10° × 6, 22½° × 2.6, 30° × 2, 45° × 1.4, 60° × 1.2.</li>
+<li>Check your work with the <a href="#/tools/bend">bending calculator</a> until the numbers are automatic.</li>
+</ul>`
     }
   ],
   questions: [
@@ -127,6 +183,17 @@
     { v: 1, l: 'bender', q: 'A single run mixes EMT, a section of rigid, and a piece of flex. The bends between pull points may total:', c: ['360° for the whole run', '360° for each wiring method', '540°', 'No limit'], w: '300.24 (2026): the 360° limit applies to any combination of conduit or tubing in a single run.', r: '300.24' },
     { l: 'offset', q: 'A 10" offset using 45° bends. Distance between marks?', c: ['14"', '20"', '12"', '26"'], w: '10 × 1.4 = 14".' },
     { l: 'offset', q: 'A 4" offset using 45° bends. How much shrink?', c: ['1½"', '1"', '¾"', '2"'], w: '4 × 3/8" = 1½".' },
-    { l: 'saddle', q: 'How many degrees does a 3-point saddle (45° center, two 22½° outer bends) add toward the 360° limit?', c: ['90°', '45°', '67½°', '180°'], w: '45 + (2 × 22½) = 90°. Offsets and saddles count toward the 360° limit.', r: '358.24(B)' }
+    { l: 'saddle', q: 'How many degrees does a 3-point saddle (45° center, two 22½° outer bends) add toward the 360° limit?', c: ['90°', '45°', '67½°', '180°'], w: '45 + (2 × 22½) = 90°. Offsets and saddles count toward the 360° limit.', r: '358.24(B)' },
+    { l: 'saddle4', q: 'A 4-point saddle is 6" high with 30° bends. Distance between the two marks of each offset?', c: ['12"', '6"', '9"', '18"'], w: '6 × 2 (30° multiplier) = 12".' },
+    { l: 'saddle4', q: 'A 4-point saddle is 6" high with 30° bends. Shrink for each offset?', c: ['1½"', '¾"', '3"', '6"'], w: '6 × ¼" = 1½".' },
+    { l: 'saddle4', q: 'A 4-point saddle is 6" high with 30° bends. Total pipe used up by shrink?', c: ['3"', '1½"', '6"', '¾"'], w: '2 offsets × 1½" = 3".' },
+    { l: 'saddle4', q: 'Obstacle near edge 40" from the pipe end, 6" high, 30° bends. Where is Mark 2 (top of the first offset)?', c: ['41½"', '40"', '38½"', '52"'], w: 'D + shrink = 40 + (6 × ¼) = 41½".' },
+    { l: 'saddle4', q: 'Mark 2 is at 41½" for a 6" high saddle with 30° bends. Where is Mark 1?', c: ['29½"', '35½"', '41½"', '53½"'], w: '41½ − (6 × 2) = 29½".' },
+    { l: 'saddle4', q: 'Four 30° bends in a 4-point saddle add how much toward the 360° limit?', c: ['120°', '90°', '60°', '180°'], w: '4 × 30° = 120°.', r: '358.24(B)' },
+    { l: 'air', q: 'Bending "in the air" means:', c: ['Bender upside down, handle on the floor, pushing the pipe into the shoe by hand', 'Bending pipe overhead on a lift', 'Bending without marking the pipe', 'Using a hydraulic bender'], w: 'Head up, handle down; good for small bends and long sticks.' },
+    { l: 'air', q: 'Bending in the air is most handy for:', c: ['Small bends like kicks and box offsets, or a long stick with bends in the way', 'Large 90s on 1¼" EMT', 'Rigid over 1"', 'Cutting pipe'], w: 'Small bends where the floor method would hit something.' },
+    { l: 'speed', q: 'A ½" box offset using 10° bends. How far apart are the marks?', c: ['3"', '1"', '6"', '1½"'], w: '½ × 6 = 3".' },
+    { l: 'speed', q: 'Why use 10° bends instead of 30° for a ½" box offset?', c: ['At 30° the marks would be only 1" apart, too close to bend', '30° is not allowed by code', '10° bends have more shrink', 'It uses less pipe'], w: '½ × 2 = 1" at 30°; ½ × 6 = 3" at 10°.' },
+    { l: 'speed', q: 'The multiplier for 10° offset bends is:', c: ['6', '2', '2.6', '1.4'], w: 'Offset table: 10° = 6.' },
   ]
 });
