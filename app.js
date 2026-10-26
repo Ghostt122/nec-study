@@ -589,4 +589,8 @@ views.progress = () => {
 };
 
 loadPack().then(route);
-if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js');
+if ('serviceWorker' in navigator && location.protocol === 'https:') {
+  const had = !!navigator.serviceWorker.controller;  // reload once when a new version takes over, so it shows right away
+  navigator.serviceWorker.addEventListener('controllerchange', () => { if (had) location.reload(); });
+  navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).then(r => r.update());
+}
